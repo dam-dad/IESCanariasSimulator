@@ -1,4 +1,4 @@
-package engine;
+package engine.world;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;

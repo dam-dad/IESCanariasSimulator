@@ -1,6 +1,6 @@
 package exec;
 
-import engine.World;
+import engine.world.World;
 
 public class Main {
     public Main() {

@@ -1,5 +1,7 @@
-package engine;
+package engine.objects;
 
+import engine.ui.Dialog;
+import engine.world.ObstacleTile;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -15,10 +17,10 @@ public class NPC {
     private double y = 0;
     private Pane root = new Pane();
     private Stage stage;
-    private String standingDown = "Down2.png";
-    private String standingUp = "Up2.png";
-    private String standingLeft = "Left2.png";
-    private String standingRight = "Right2.png";
+    private String standingDown;
+    private String standingUp;
+    private String standingLeft;
+    private String standingRight;
     private ImageView character_image;
     private LinkedList<ObstacleTile> barrier;
     private ArrayList<Image> testImageList;
@@ -43,15 +45,24 @@ public class NPC {
         this.root = root;
         this.stage = stage;
         this.testImageList = new ArrayList();
-        this.testImageList.add(new Image("Up2.png"));
-        this.testImageList.add(new Image("Down2.png"));
-        this.testImageList.add(new Image("Right2.png"));
-        this.testImageList.add(new Image("Left2.png"));
         this.barrier = new LinkedList<>();
-
         this.x = x;
         this.y = y;
         this.id = ID;
+
+        if (ID == 1) {
+            standingDown = "Down2.png";
+            standingUp = "Up2.png";
+            standingLeft = "Left2.png";
+            standingRight = "Right2.png";
+
+        } else if (ID == 2) {
+            standingDown = "npcTest_Down2.png";
+            standingUp = "npcTest_Up2.png";
+            standingLeft = "npcTest_Left2.png";
+            standingRight = "npcTest_Right2.png";
+        }
+
 
         NPC.this.NPCReactions();
 
@@ -65,22 +76,29 @@ public class NPC {
         System.out.println("La coordenada de x en el NPC es: " + x);
         System.out.println("La coordenada de x en el NPC es: " + y);
 
-        }
+    }
 
-    public void createObstacleTile(double w, double h, double x, double y) {
+    private void createObstacleTile(double w, double h, double x, double y) {
         ObstacleTile tile = new ObstacleTile(w, h, x, y);
         this.root.getChildren().add(tile);
         this.barrier.add(tile);
 
     }
 
-    public void npcInteraction(String quote, double x, double y) {
+    public void npcInteraction(double x, double y) {
         System.out.println("x: " + x + " npcX: " + this.x + " y: " + y + " npcY: " + this.y);
         if ((x >= this.x - 40 && x <= this.x + 80) && (y >= this.y - 25 && y <= this.y + 55)) {
 
-            System.out.println(this.id + " Se interactua " + quote);
+            System.out.println(this.id + " Se interactua ");
             for (Dialog dialog : getDialogs()){
-                dialog.invokeDialog(frase);
+                if (dialog.getDialog().getOpacity() == 0) {
+                    dialog.invokeDialog(frase);
+
+                } else {
+                    dialog.getDialog().setOpacity(0);
+                    dialog.getDialogText().setOpacity(0);
+                }
+
             }
 
             if (y < this.y || x < this.x) {
@@ -105,7 +123,7 @@ public class NPC {
             }
         }
         else {
-            System.out.println(this.id + " No se interactua " + quote);
+            System.out.println(this.id + " No se interactua ");
         }
 
     }
@@ -129,7 +147,5 @@ public class NPC {
         return y;
     }
 }
-
-
 
 

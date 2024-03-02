@@ -1,10 +1,13 @@
-package engine;
+package engine.objects;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
+import engine.world.Maps;
+import engine.world.ObstacleTile;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -60,6 +63,15 @@ public class Character {
         return npcs;
     }
 
+    private List<Elements> ob = new ArrayList<>();
+    public void addElements(Elements obs) {
+        ob.add(obs);
+    }
+    public List<Elements> getElements() {
+        return ob;
+    }
+    private Random random = new Random();
+
     public Character(Pane root, Stage stage, Scene scene, LinkedList<ObstacleTile> barrier, final ImageView character_image)
 
     {
@@ -102,7 +114,10 @@ public class Character {
                     Character.this.moveLeft = true;
                 } else if (code == KeyCode.SPACE) {
                     for (NPC npc : getNPCs()) {
-                            npc.npcInteraction("Hola que tal", x, y);
+                            npc.npcInteraction(x, y);
+                    }
+                    for (Elements ob : getElements()) {
+                        ob.elementInteraction(x, y);
                     }
                 }
 
@@ -191,6 +206,10 @@ public class Character {
 
     private void moveCharacter(int dx, int dy) {
 
+        if (shouldStartRandomCombat()) {
+            startRandomCombat();
+        }
+
         if (dx == 0 && dy == 0 && my == -2) {
             this.character_image.setImage(new Image(this.standingUp));
         }
@@ -212,7 +231,7 @@ public class Character {
 
             mapsInstance.setX(x);
             mapsInstance.setY(y);
-            System.out.println(mapsInstance.getX() + " " + mapsInstance.getY());
+            //System.out.println(mapsInstance.getX() + " " + mapsInstance.getY());
 
 
 
@@ -240,35 +259,98 @@ public class Character {
                 this.timer.stop();
                 this.root = new Pane();
 
-                mapsInstance.setX(626);
-                mapsInstance.setY(702);
+                mapsInstance.setX(470);
+                mapsInstance.setY(719);
 
+                mapsInstance.calleInstituto2(stage);
+
+            }
+
+            else if (x >= 0.0 && x <= 800.0 && y >= 757.0 && y <= 778.0 &&
+                    i == 1) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(75);
+                mapsInstance.setY(60);
+                mapsInstance.placita(stage);
+
+            }
+
+            else if (x >= 757.0 && x <= 778.0 && y >= 0.0 && y <= 800.0 &&
+                    i == 1) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(25);
+                mapsInstance.setY(454);
+                mapsInstance.lobbyInstituto(stage);
+
+            }
+
+            //calleInstituto2
+
+            else if (x >= 0.0 && x <= 800.0 && y >= 757.0 && y <= 778.0 &&
+                    i == 2) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(500);
+                mapsInstance.setY(73);
+                mapsInstance.calleInstituto(stage);
+
+            }
+
+            else if (x >= 0.0 && x <= 30.0 && y >= 0.0 && y <= 800.0 &&
+                    i == 2) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(x + 640);
+                mapsInstance.setY(y - 24);
                 mapsInstance.institutoPlaza(stage);
 
             }
-            //instituto-plaza
 
-            else if (x >= 0.0 && x <= 400.0 && y >= 757.0 && y <= 778.0 &&
+            else if (x >= 757.0 && x <= 778.0 && y >= 0.0 && y <= 800.0 &&
                     i == 2) {
                 // Hacer algo si las escenas son iguales
                 this.timer.stop();
                 this.root = new Pane();
 
-                mapsInstance.setX(632);
-                mapsInstance.setY(73);
-                mapsInstance.plaza(stage);
+                mapsInstance.setX(25);
+                mapsInstance.setY(583);
+                mapsInstance.paradaGuagua(stage);
 
             }
 
-            else if (x >= 400.0 && x <= 800.0 && y >= 757.0 && y <= 778.0 &&
-                    i == 2) {
+            //institutoPlaza
+
+            else if (x >= 770.0 && x <= 800.0 && y >= 0.0 && y <= 800.0 &&
+                    i == 7) {
                 // Hacer algo si las escenas son iguales
                 this.timer.stop();
                 this.root = new Pane();
 
-                mapsInstance.setX(428);
-                mapsInstance.setY(51);
-                mapsInstance.calleInstituto(stage);
+                mapsInstance.setX(x - 680);
+                mapsInstance.setY(y - 24);
+                mapsInstance.calleInstituto2(stage);
+
+            }
+
+            else if (x >= 0.0 && x <= 800.0 && y >= 757.0 && y <= 778.0 &&
+                    i == 7) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(620);
+                mapsInstance.setY(45);
+                mapsInstance.plaza(stage);
 
             }
 
@@ -292,8 +374,8 @@ public class Character {
                 this.timer.stop();
                 this.root = new Pane();
 
-                mapsInstance.setX(116);
-                mapsInstance.setY(702);
+                mapsInstance.setX(370);
+                mapsInstance.setY(719);
                 mapsInstance.institutoPlaza(stage);
 
             }
@@ -338,16 +420,131 @@ public class Character {
 
             }
 
+            //Parada Guagua
+
+            else if (x >= 0.0 && x <= 30.0 && y >= 0.0 && y <= 800.0 &&
+                    i == 6) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(730);
+                mapsInstance.setY(100);
+                mapsInstance.calleInstituto2(stage);
+
+            }
+
+            //Placita
+
+            else if (x >= 0.0 && x <= 800.0 && y >= 23.0 && y <= 43 &&
+                    i == 8) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(422);
+                mapsInstance.setY(707);
+
+                mapsInstance.calleInstituto(stage);
+
+            }
+
+            //Lobby
+
+            else if (x >= 0.0 && x <= 30.0 && y >= 0.0 && y <= 800.0 &&
+                    i == 9) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(694);
+                mapsInstance.setY(652);
+                mapsInstance.calleInstituto(stage);
+
+            }
+
+            else if (x >= 757.0 && x <= 778.0 && y >= 0.0 && y <= 800.0 &&
+                    i == 9) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(25);
+                mapsInstance.setY(690);
+                mapsInstance.lobbyInstituto2(stage);
+
+            }
+
+            //lobbyInstituto2
+
+            else if (x >= 0.0 && x <= 30.0 && y >= 0.0 && y <= 800.0 &&
+                    i == 10) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(730);
+                mapsInstance.setY(272);
+                mapsInstance.lobbyInstituto(stage);
+
+            }
+
+            else if (x >= 240.0 && x <= 348.0 && y >= 20.0 && y <= 108.0 &&
+                    i == 10) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(180);
+                mapsInstance.setY(720);
+                mapsInstance.subidaInstituto(stage);
+
+            }
+
+            //subidaInstituto
+
+            else if (x >= 0.0 && x <= 800.0 && y >= 757.0 && y <= 778.0 &&
+                    i == 11) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(290);
+                mapsInstance.setY(102);
+                mapsInstance.lobbyInstituto2(stage);
+
+            }
 
             else {
-                // Imprimir valores de x e y cuando la condición no se cumple
-                System.out.println("x: " + x + ", y: " + y + ", i: " + this.i);
+                //System.out.println("x: " + x + ", y: " + y + ", i: " + this.i);
 
 
             }
 
         }
 
+    }
+    private boolean isMoving() {
+        return moveUp || moveDown || moveRight || moveLeft;
+    }
+
+    private boolean shouldStartRandomCombat() {
+        // Verificar si el personaje se está moviendo
+        if (!isMoving()) {
+            return false;
+        }
+        double probability = 0.001;
+
+        // Generar un número aleatorio entre 0 y 1
+        double randomValue = random.nextDouble();
+
+        // Verificar si el número aleatorio es menor que la probabilidad
+        return randomValue < probability;
+    }
+
+    private void startRandomCombat() {
+        System.out.println("¡Combate aleatorio!");
+        System.out.println(x);
     }
 
     private boolean checkCollision(double wantsToGoToThisX, double wantsToGoToThisY) {

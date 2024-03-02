@@ -1,5 +1,6 @@
 package engine.minijuego;
 
+import engine.world.Maps;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -13,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.net.URL;
@@ -28,6 +30,9 @@ public class MinijuegoController implements Initializable {
 
     private int dianasAcertadas;
 
+    Stage stage = new Stage();
+    Maps mapsInstance = new Maps();
+
     @FXML
     private Label tiempoLabel;
 
@@ -42,6 +47,7 @@ public class MinijuegoController implements Initializable {
     private int tiempoRestante = 60; // 60 segundos
 
     public MinijuegoController() {
+
     }
 
     @Override
@@ -98,6 +104,9 @@ public class MinijuegoController implements Initializable {
             esperaTimeline.play();
         }
         // Puedes ajustar el tiempo de espera según tus necesidades
+        if (this.dianasAcertadas >= 20){
+            mapsInstance.arcade(stage);
+        }
     }
 
     private void eliminarDiana() {

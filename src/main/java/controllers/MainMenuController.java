@@ -3,7 +3,7 @@ package controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import engine.Maps;
+import engine.world.Maps;
 
 public class MainMenuController {
 

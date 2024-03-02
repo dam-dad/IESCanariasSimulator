@@ -1,4 +1,4 @@
-package engine;
+package engine.ui;
 
 import javafx.animation.PauseTransition;
 import javafx.scene.Scene;
@@ -25,7 +25,7 @@ public class Dialog {
 
         this.dialog = dialog;
 
-        dialogText.setFont(Font.font("Verdana", FontWeight.BOLD, 20));
+        dialogText.setFont(Font.font("Verdana", FontWeight.BOLD, 20)); //TODO Hacer con css
 
         this.root = root;
         this.stage = stage;
@@ -37,13 +37,24 @@ public class Dialog {
         dialogText.setOpacity(1);
         dialog.setOpacity(0.7);
 
-
-        PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
-        pause.setOnFinished(ev -> { dialogText.setOpacity(0); dialog.setOpacity(0); });
-        pause.play();
-
-
-
         System.out.println("DialogBA " + dialog.getOpacity());
+    }
+
+
+    //Getters y Setters
+    public ImageView getDialog() {
+        return dialog;
+    }
+
+    public void setDialog(ImageView dialog) {
+        this.dialog = dialog;
+    }
+
+    public Text getDialogText() {
+        return dialogText;
+    }
+
+    public void setDialogText(Text dialogText) {
+        this.dialogText = dialogText;
     }
 }

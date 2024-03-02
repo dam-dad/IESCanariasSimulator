@@ -1,4 +1,4 @@
-package engine;
+package engine.world;
 
 import java.util.LinkedList;
 
