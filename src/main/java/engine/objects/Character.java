@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+import engine.combate.peleitas.FightController;
+import engine.combate.peleitas.SumadorCombate;
 import engine.world.Maps;
 import engine.world.ObstacleTile;
 import javafx.animation.AnimationTimer;
@@ -72,6 +74,10 @@ public class Character {
     }
     private Random random = new Random();
 
+    private int sumador;
+
+
+    public Character(){}
     public Character(Pane root, Stage stage, Scene scene, LinkedList<ObstacleTile> barrier, final ImageView character_image)
 
     {
@@ -99,6 +105,8 @@ public class Character {
         this.downCount = 0;
         this.rightCount = 0;
         this.leftCount = 0;
+
+
 
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
 
@@ -545,6 +553,18 @@ public class Character {
     private void startRandomCombat() {
         System.out.println("¡Combate aleatorio!");
         System.out.println(x);
+
+        this.timer.stop();
+        this.root = new Pane();
+
+        mapsInstance.setX(290);
+        mapsInstance.setY(102);
+        try {
+            sumador += 1;
+            mapsInstance.combate(stage, i, sumador);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private boolean checkCollision(double wantsToGoToThisX, double wantsToGoToThisY) {
@@ -581,5 +601,13 @@ public class Character {
 
     public void setI(int i) {
         this.i = i;
+    }
+
+    public Stage getStage() {
+        return stage;
+    }
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
 }

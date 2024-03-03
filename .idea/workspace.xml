@@ -5,40 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55b84a9d-f83e-4c96-8cb2-7eedd279b055" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FondoPelea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/empty_box_bigger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fondo1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/minotaur-outlined.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/nube1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/spider_border.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ConfiguracionMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/engine/MusicPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/FightApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/FightController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/FinPeleaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/Jugador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/Monstruo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/SumadorCombate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/fightStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/FinPelea.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/FondoMenu.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Menu/Configuracion.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Menu/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Music/menu.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/attack4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dog_outline.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fight.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hello-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/parque.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/objects/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/Dialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/ui/Dialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/world/Maps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/objects/NPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/Objects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/objects/Elements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/ObstacleTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/world/ObstacleTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/world/World.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/engine/minijuego/MinijuegoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/minijuego/MinijuegoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exec/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exec/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Down1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Down1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Down2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Down2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Down3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Down3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Left3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Left3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Right3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Right3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Up1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Up1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Up2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Up2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Up3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Up3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/instituto-plaza.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/instituto-plaza.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/objects/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/objects/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/objects/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/objects/Elements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/world/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/world/Maps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/world/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Menu/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Menu/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/diana.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/diana.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lobby2_instituto.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lobby2_instituto.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tablero.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tablero.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,13 +82,14 @@
     "Application.Main.executor": "Run",
     "Application.MainMenuController.executor": "Run",
     "Application.World.executor": "Run",
+    "Application.engine.minijuego.Main.executor": "Run",
     "Application.engine.peleitas.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/cooph/Pictures/Peleitas",
+    "last_opened_file_path": "C:/Users/cooph/Documents/GitHub/IESCanariasSimulator/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -99,25 +98,31 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.4275862",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\cooph\Documents\GitHub\IESCanariasSimulator\src\main\resources" />
+      <recent name="C:\Users\cooph\Documents\GitHub\IESCanariasSimulator\src\main\resources\Menu" />
+      <recent name="C:\Users\cooph\Documents\GitHub\IESCanariasSimulator\src\main\resources\Css" />
+      <recent name="C:\Users\cooph\Documents\GitHub\IESCanariasSimulator\src\main\java\engine\combate\peleitas" />
       <recent name="C:\Users\cooph\Documents\GitHub\IESCanariasSimulator\src\main\java" />
-      <recent name="C:\Users\cooph\Documents\GitHub\IESCanariasSimulator\src\main\java\engine" />
-      <recent name="C:\Users\cooph\Downloads\RPG-Test\src\main\resources" />
-      <recent name="C:\Users\cooph\Downloads\RPG-Test\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cooph\Documents\GitHub\IESCanariasSimulator\src\main\resources" />
       <recent name="C:\Users\cooph\Documents\GitHub\IESCanariasSimulator\src\main\java\controllers" />
       <recent name="C:\Users\cooph\Documents\GitHub\IESCanariasSimulator\src\main\java\fights" />
-      <recent name="C:\Users\cooph\Documents\GitHub\IESCanariasSimulator\src\main\resources" />
       <recent name="C:\Users\cooph\Downloads\RPG-Test\src\main\resources" />
       <recent name="C:\Users\cooph\Downloads\RPG-Test\src\main\resources\com\example\rpgtest" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="engine" />
+      <recent name="controllers" />
       <recent name="" />
       <recent name="rpgworld" />
     </key>
@@ -143,6 +148,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="engine.minijuego.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="engine.minijuego.Main" />
+      <module name="IESCanariasSimulator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="engine.minijuego.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="engine.peleitas.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="engine.peleitas.Main" />
       <module name="IESCanariasSimulator" />
@@ -159,6 +177,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.engine.minijuego.Main" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.engine.peleitas.Main" />
       </list>

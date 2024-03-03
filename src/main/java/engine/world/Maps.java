@@ -1,6 +1,8 @@
 package engine.world;
 
 
+import engine.combate.peleitas.FightApplication;
+import engine.combate.peleitas.FightController;
 import engine.minijuego.MinijuegoController;
 import engine.objects.Character;
 import engine.objects.Elements;
@@ -13,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import javafx.scene.media.MediaPlayer;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -28,9 +31,9 @@ public class Maps {
 
     private Scene scene;
 
-    private double x = 300;
+    private double x = 290;
 
-    private double y = 300;
+    private double y = 400;
 
     private Image BackgroundImage;
     private BackgroundSize size = new BackgroundSize(-1.0, -1.0, false, false, true, false);
@@ -58,6 +61,8 @@ public class Maps {
     }
 
     private Dialog dialog;
+
+    private int sumadorCombate = 0;
 
 
     //Constructor
@@ -372,7 +377,7 @@ public class Maps {
         Elements element = new Elements(this.root, stage, scene, 1, 250, 380);
 
         this.elements = element;
-        element.elementsBasics(arcadeImage, element.getX(), element.getY(), barrier);
+        element.elementsBasics(arcadeImage, element.getX(), element.getY(), 60, 87, barrier);
 
         //Dialog
 
@@ -411,6 +416,12 @@ public class Maps {
         //Muro Derecha
         this.createObstacleTile(60.0, 800, 740, 0.0);
 
+        ImageView guaguaImage = new ImageView("parada026.png");
+        Elements element = new Elements(this.root, stage, scene, 2, 675, 30);
+
+        this.elements = element;
+        element.elementsBasics(guaguaImage, element.getX(), element.getY(), 50, 180, barrier);
+
         //Dialog
 
         dialog = new Dialog(root, stage, scene);
@@ -420,7 +431,8 @@ public class Maps {
         character = new Character(this.root, stage, scene, this.barrier, character_image);
 
         character.setI(6);
-
+        character.addElements(element);
+        element.addDialogs(dialog, "Parada de la 026");
     }
 
     //instituto-plaza
@@ -525,6 +537,8 @@ public class Maps {
         //Portería
         this.createObstacleTile(61, 300, 739, 372.0);
 
+
+
         //Dialog
 
         dialog = new Dialog(root, stage, scene);
@@ -562,6 +576,12 @@ public class Maps {
         this.createObstacleTile(192, 108, 48, 0);
         this.createObstacleTile(192, 108, 348, 0);
 
+        ImageView guaguaImage = new ImageView("cartelmovil.png");
+        Elements element = new Elements(this.root, stage, scene, 3, 450, 30);
+
+        this.elements = element;
+        element.elementsBasics(guaguaImage, element.getX(), element.getY(), 50, 70, barrier);
+
         //Dialog
 
         dialog = new Dialog(root, stage, scene);
@@ -571,7 +591,8 @@ public class Maps {
         character = new Character(this.root, stage, scene, this.barrier, character_image);
 
         character.setI(10);
-
+        character.addElements(element);
+        element.addDialogs(dialog, "QUEDA PROHIBIDO EL USO DE MÓVILES");
     }
 
     //subidaInstituto
@@ -616,14 +637,38 @@ public class Maps {
 
     public void minijuego(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/tablero.fxml"));
+        MinijuegoController minijuego = new MinijuegoController();
+        minijuego.setStage(stage);
+        loader.setController(minijuego);
         Parent root = loader.load();
         stage.setTitle("Minijuego de Dianas");
-        stage.setScene(new Scene(root, 600, 600));
+        stage.setScene(new Scene(root, 800, 800));
+
+        BackgroundImage = new Image("doomFondo.png");
+
+        Background background = new Background(new BackgroundImage[]{new BackgroundImage(BackgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, size)});
+        this.root.setBackground(background);
+
         stage.show();
 
         MinijuegoController controlador = loader.getController();
         controlador.actualizarTiempo();
 
+    }
+
+    public void combate(Stage stage, int i, int sumador) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fight.fxml"));
+        FightController fight = new FightController();
+        fight.setI(i);
+        fight.setStage(stage);
+        loader.setController(fight);
+        Parent root = loader.load();
+        Scene scene = new Scene(root, 800, 800);
+        stage.setTitle("Fight");
+        stage.setScene(scene);
+        stage.show();
+
+        character = new Character(this.root, stage, scene, this.barrier, character_image);
     }
 
     // Método para obtener la referencia a la Scene
@@ -636,5 +681,11 @@ public class Maps {
 
     }
 
+    public int getSumadorCombate() {
+        return sumadorCombate;
+    }
 
+    public void setSumadorCombate(int sumadorCombate) {
+        this.sumadorCombate = sumadorCombate;
+    }
 }

@@ -44,6 +44,8 @@ public class Elements {
     int dy = 0;
     //Dialog dialog = new Dialog();
 
+    double w;
+    double h;
     World worldInstance = new World();
     int id;
     int ChaX = 0;
@@ -85,23 +87,48 @@ public class Elements {
 
     }
 
-    public void elementsBasics(ImageView npc_image, double x, double y, LinkedList<ObstacleTile> barrier){
+    public void elementsBasics(ImageView npc_image, double x, double y, double w, double h, LinkedList<ObstacleTile> barrier){
         npc_image.setLayoutX(x);
         npc_image.setLayoutY(y);
         this.root.getChildren().add(npc_image);
         this.barrier = barrier;
-        this.createObstacleTile(60, 87, x, y); //(Width, Height, x, y)
+        this.createObstacleTile(w, h, x, y); //(Width, Height, x, y)
         System.out.println("COLISION CREADA");
 
     }
 
     public void elementInteraction(double x, double y) {
         System.out.println("x: " + x + " npcX: " + this.x + " y: " + y + " npcY: " + this.y);
-        if ((x >= this.x - 40 && x <= this.x + 80) && (y >= this.y - 25 && y <= this.y + 55)) {
+        //Arcade
+        if ((x >= this.x - 60 && x <= this.x + 120) && (y >= this.y - 35 && y <= this.y + 87) && id == 1) {
             try {
                 mapsInstance.minijuego(stage);
             } catch (Exception e) {
                 throw new RuntimeException(e);
+            }
+        }
+        //Parada 026
+        else if (((x >= this.x - 50 && x <= this.x + 90) && (y >= this.y && y <= this.y + 180) && id == 2)){
+            for (Dialog dialog : getDialogs()){
+                if (dialog.getDialog().getOpacity() == 0) {
+                    dialog.invokeDialog(frase);
+
+                } else {
+                    dialog.getDialog().setOpacity(0);
+                    dialog.getDialogText().setOpacity(0);
+                }
+            }
+        }
+        //Carteles móviles
+        else if (((x >= this.x - 50 && x <= this.x + 70) && (y >= this.y - 35 && y <= this.y + 85) && id == 3)){
+            for (Dialog dialog : getDialogs()){
+                if (dialog.getDialog().getOpacity() == 0) {
+                    dialog.invokeDialog(frase);
+
+                } else {
+                    dialog.getDialog().setOpacity(0);
+                    dialog.getDialogText().setOpacity(0);
+                }
             }
         }
         else {

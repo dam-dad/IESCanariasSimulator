@@ -1,5 +1,6 @@
 package engine.minijuego;
 
+import engine.MusicPlayer;
 import engine.world.Maps;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -12,12 +13,15 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import engine.objects.Character;
+import javafx.util.Pair;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class MinijuegoController implements Initializable {
@@ -30,8 +34,10 @@ public class MinijuegoController implements Initializable {
 
     private int dianasAcertadas;
 
-    Stage stage = new Stage();
+    Stage stage;
     Maps mapsInstance = new Maps();
+
+    private MusicPlayer musicPlayer;
 
     @FXML
     private Label tiempoLabel;
@@ -43,11 +49,35 @@ public class MinijuegoController implements Initializable {
     @FXML
     private Label puntosLabel;
 
+    @FXML
+    private BorderPane view;
+
+    @FXML
+    private ImageView manoDoom;
+
 
     private int tiempoRestante = 60; // 60 segundos
 
     public MinijuegoController() {
+    }
 
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
+    private List<Pair<Integer, Integer>> posicionesOcupadas = new ArrayList<>();
+
+    Image doomGun = new Image("DOOM_1_Pistol_viewmodel.png");
+    public void cambiarFondo() {
+        // Crea una nueva imagen de fondo (ajusta la ruta según tu proyecto)
+        Image fondoImagen = new Image("doomFondo.png");
+        BackgroundImage backgroundImage = new BackgroundImage(fondoImagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+
+        // Crea un nuevo fondo
+        Background fondo = new Background(backgroundImage);
+
+        // Establece el nuevo fondo en el BorderPane
+        view.setBackground(fondo);
     }
 
     @Override
@@ -55,7 +85,12 @@ public class MinijuegoController implements Initializable {
         puntuacion = new Puntuacion();
         puntosLabel.setText("Puntos: " + puntuacion.getPuntos());
         tiempoLabel.setText("Tiempo: " + tiempoRestante + " s"); // Mostrar tiempo inicial
+        manoDoom.setImage(doomGun);
+        musicPlayer = new MusicPlayer("/Music/Doom.mp3");
+        musicPlayer.play();
         iniciarMinijuego();
+        cambiarFondo();
+
     }
 
 
@@ -79,6 +114,8 @@ public class MinijuegoController implements Initializable {
 
 
     private void finDelJuego() {
+        musicPlayer.stop();
+        mapsInstance.arcade(stage);
     }
 
 
@@ -88,6 +125,20 @@ public class MinijuegoController implements Initializable {
 
 
     private void clicEnDiana() {
+        Image doomGun = new Image("DOOM_1_Pistol_viewmodel.png");
+        Image doomGun2 = new Image("DOOM_1_Pistol_viewmodel2.png");
+        manoDoom.setImage(doomGun2);
+        MusicPlayer efectos;
+        efectos = new MusicPlayer("/Effects/DoomPistol.mp3");
+        efectos.play();
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.75), event -> {
+            efectos.stop();
+        }));
+        Timeline timeline2 = new Timeline(new KeyFrame(Duration.seconds(0.25), event -> {
+            manoDoom.setImage(doomGun);
+        }));
+        timeline.play();
+        timeline2.play();
         puntuacion.sumarPuntos(50);
         puntosLabel.setText("Puntos: " + puntuacion.getPuntos());
 
@@ -95,16 +146,8 @@ public class MinijuegoController implements Initializable {
 
         eliminarDiana();
 
-        // Verificar si el jugador acertó dos dianas
-        if (dianasAcertadas % 10 == 0) {
-            // Esperar 2 segundos antes de generar una nueva diana
-            Timeline esperaTimeline = new Timeline(new KeyFrame(Duration.seconds(2), event -> {
-                Platform.runLater(() -> generarNuevaDiana());
-            }));
-            esperaTimeline.play();
-        }
-        // Puedes ajustar el tiempo de espera según tus necesidades
         if (this.dianasAcertadas >= 20){
+            musicPlayer.stop();
             mapsInstance.arcade(stage);
         }
     }
@@ -123,6 +166,9 @@ public class MinijuegoController implements Initializable {
                 maingrid.getChildren().remove(stackPane);
             });
         }
+        // Actualizar la lista de posiciones ocupadas
+        posicionesOcupadas.remove(new Pair<>(dianaActual.getColumna(), dianaActual.getFila()));
+
     }
 
 
@@ -141,10 +187,20 @@ public class MinijuegoController implements Initializable {
     private Diana generarDiana() {
         dianaActual = new Diana();
 
+        // Asegurarse de que siempre haya al menos una diana en pantalla
+        if (posicionesOcupadas.size() >= maingrid.getChildren().size()) {
+            posicionesOcupadas.clear();  // Limpiar las posiciones ocupadas si se ocuparon todas las celdas
+        }
+
+        // Verificar si la posición está ocupada
+        while (posicionesOcupadas.contains(new Pair<>(dianaActual.getColumna(), dianaActual.getFila()))) {
+            dianaActual = new Diana();  // Generar una nueva diana si la posición está ocupada
+        }
+
         Image imagenDiana = new Image("/diana.png");
         ImageView imageView = new ImageView(imagenDiana);
-        imageView.setFitWidth(50);
-        imageView.setFitHeight(50);
+        imageView.setFitWidth(80);
+        imageView.setFitHeight(80);
 
         // Agregar evento de clic a la diana
         imageView.setOnMouseClicked(event -> clicEnDiana());
@@ -173,8 +229,14 @@ public class MinijuegoController implements Initializable {
     }
 
 
+    private int calcularVelocidad() {
+        // Puedes ajustar la lógica según tus necesidades
+        int velocidadBase = 6;  // Velocidad base en segundos
+        int velocidad = Math.max(1, velocidadBase - puntuacion.getPuntos() / 50);  // Ajustar según la puntuación
+        return velocidad;
+    }
+
     private void generarNuevaDiana() {
-        // Llamar a la función generarDiana para crear una nueva diana
         mostrarDiana();
     }
 }

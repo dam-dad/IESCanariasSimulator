@@ -34,12 +34,12 @@ public class World extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Menu/MainMenu.fxml"));
         Scene scene = new Scene(loader.load());
 
-        MainMenuController controller = loader.getController();
-        controller.setStage(primaryStage);
-        controller.setWorld(new Maps());
+        primaryStage.setScene(scene); // Primero asigna la escena al Stage
+        primaryStage.show(); // Muestra la ventana
 
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        MainMenuController controller = loader.getController();
+        controller.setStage(primaryStage); // Luego configura el controlador
+        controller.setWorld(new Maps());
     }
 
 
