@@ -536,6 +536,8 @@ public class Maps {
         this.createObstacleTile(184, 152, 616, 140.0);
         //Portería
         this.createObstacleTile(61, 300, 739, 372.0);
+        //Barra de abajo
+        this.createObstacleTile(800, 140, 0, 660.0);
 
 
 
@@ -632,6 +634,167 @@ public class Maps {
         character = new Character(this.root, stage, scene, this.barrier, character_image);
 
         character.setI(11);
+
+    }
+
+    //subidaInstituto2
+    public void subidaInstituto2(Stage stage) {
+        this.root = new Pane();
+        this.scene = new Scene(this.root, 800.0, 800.0);
+        setScene(scene);
+        stage.setTitle("Lobby del IES Canarias");
+        stage.setScene(scene);
+        stage.show();
+
+        BackgroundImage = new Image("subida_instituto2.png");
+
+        Background background = new Background(new BackgroundImage[]{new BackgroundImage(BackgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, size)});
+        this.root.setBackground(background);
+
+        //Colisiones
+        this.barrier = new LinkedList();
+
+        //Muro Izquierda
+        this.createObstacleTile(48.0, 800, 0, 0.0); //(Width, Height, x, y)
+        //Muro Derecha
+        this.createObstacleTile(460.0, 652, 340, 148);
+        //Pared Arriba
+        this.createObstacleTile(156, 108, 48, 0);
+        this.createObstacleTile(688, 108, 212, 0);
+        //Bancos
+        this.createObstacleTile(28, 104, 56, 316);
+        this.createObstacleTile(28, 104, 56, 672);
+
+        //Dialog
+
+        dialog = new Dialog(root, stage, scene);
+
+        worldBasics();
+
+        character = new Character(this.root, stage, scene, this.barrier, character_image);
+
+        character.setI(12);
+
+    }
+
+    //lobbyAulas
+    public void lobbyAulas(Stage stage) {
+        this.root = new Pane();
+        this.scene = new Scene(this.root, 800.0, 800.0);
+        setScene(scene);
+        stage.setTitle("Aulas");
+        stage.setScene(scene);
+        stage.show();
+
+        BackgroundImage = new Image("lobby_aulas.png");
+
+        Background background = new Background(new BackgroundImage[]{new BackgroundImage(BackgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, size)});
+        this.root.setBackground(background);
+
+        //Colisiones
+        this.barrier = new LinkedList();
+
+        //Muro Izquierda
+        this.createObstacleTile(240, 180, 0, 0.0); //(Width, Height, x, y)
+        this.createObstacleTile(240, 524, 0, 276);
+        //Muro Derecha
+        this.createObstacleTile(240, 180, 560, 0.0); //(Width, Height, x, y)
+        this.createObstacleTile(240, 524, 560, 276);
+        //Barandilla
+        this.createObstacleTile(8, 116, 440, 0);
+        //Bancos
+        this.createObstacleTile(28, 104, 244, 48);
+
+        //Dialog
+
+        dialog = new Dialog(root, stage, scene);
+
+        worldBasics();
+
+        character = new Character(this.root, stage, scene, this.barrier, character_image);
+
+        character.setI(13);
+
+    }
+
+    //lobbyAulas2
+    public void lobbyAulas2(Stage stage) {
+        this.root = new Pane();
+        this.scene = new Scene(this.root, 800.0, 800.0);
+        setScene(scene);
+        stage.setTitle("Aulas");
+        stage.setScene(scene);
+        stage.show();
+
+        BackgroundImage = new Image("lobby_aulas2.png");
+
+        Background background = new Background(new BackgroundImage[]{new BackgroundImage(BackgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, size)});
+        this.root.setBackground(background);
+
+        //Colisiones
+        this.barrier = new LinkedList();
+
+        //Muro Izquierda
+        this.createObstacleTile(240, 344, 0, 0.0); //(Width, Height, x, y)
+        this.createObstacleTile(240, 200, 0, 440);
+        //Muro Derecha
+        this.createObstacleTile(240, 344, 560, 0.0); //(Width, Height, x, y)
+        this.createObstacleTile(240, 200, 560, 440);
+        //Muro Fondo
+        this.createObstacleTile(48, 56, 240, 164);
+        //Barandilla
+        this.createObstacleTile(164, 24, 396, 212);
+        //Barra de abajo
+        this.createObstacleTile(800, 164, 0, 636);
+
+
+        //Dialog
+
+        dialog = new Dialog(root, stage, scene);
+
+        worldBasics();
+
+        character = new Character(this.root, stage, scene, this.barrier, character_image);
+
+        character.setI(14);
+
+    }
+
+    //Aula
+    public void aula(Stage stage) {
+        this.root = new Pane();
+        this.scene = new Scene(this.root, 800.0, 800.0);
+        setScene(scene);
+        stage.setTitle("Aulas");
+        stage.setScene(scene);
+        stage.show();
+
+        BackgroundImage = new Image("aula.png");
+
+        Background background = new Background(new BackgroundImage[]{new BackgroundImage(BackgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, size)});
+        this.root.setBackground(background);
+
+        //Colisiones
+        this.barrier = new LinkedList();
+
+        //Muro Izquierda
+        this.createObstacleTile(128, 84, 12, 248.0); //(Width, Height, x, y)
+        this.createObstacleTile(260, 400, 12, 400);
+        //Muro Derecha
+        this.createObstacleTile(44, 488, 756, 312); //(Width, Height, x, y)
+        this.createObstacleTile(260, 388, 484, 512);
+        //Muro Fondo
+        this.createObstacleTile(800, 220, 0, 0);
+
+        //Dialog
+
+        dialog = new Dialog(root, stage, scene);
+
+        worldBasics();
+
+        character = new Character(this.root, stage, scene, this.barrier, character_image);
+
+        character.setI(15);
 
     }
 

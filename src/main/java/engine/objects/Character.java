@@ -523,6 +523,111 @@ public class Character {
 
             }
 
+            else if (x >= 0.0 && x <= 800.0 && y >= 0.0 && y <= 50.0 &&
+                    i == 11) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(180);
+                mapsInstance.setY(720);
+                mapsInstance.subidaInstituto2(stage);
+
+            }
+
+            //subidaInstituto2
+
+            else if (x >= 0.0 && x <= 800.0 && y >= 757.0 && y <= 778.0 &&
+                    i == 12) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(290);
+                mapsInstance.setY(102);
+                mapsInstance.subidaInstituto(stage);
+
+            }
+
+            else if (x >= 156.0 && x <= 212.0 && y >= 0.0 && y <= 120.0 &&
+                    i == 12) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(350);
+                mapsInstance.setY(720);
+                mapsInstance.lobbyAulas(stage);
+
+            }
+
+            //lobbyAulas
+
+            else if (x >= 0.0 && x <= 800.0 && y >= 757.0 && y <= 778.0 &&
+                    i == 13) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(290);
+                mapsInstance.setY(102);
+                mapsInstance.subidaInstituto2(stage);
+
+            }
+
+            else if (x >= 450 && x <= 700.0 && y >= 0.0 && y <= 116.0 &&
+                    i == 13) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(300);
+                mapsInstance.setY(230);
+                mapsInstance.lobbyAulas2(stage);
+
+            }
+
+            //lobbyAulas2
+
+            else if (x >= 284.0 && x <= 404.0 && y >= 178.0 && y <= 220.0 &&
+                    i == 14) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(487);
+                mapsInstance.setY(121);
+                mapsInstance.lobbyAulas(stage);
+
+            }
+
+            else if (x >= 770.0 && x <= 800.0 && y >= 0.0 && y <= 800.0 &&
+                    i == 14) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(725);
+                mapsInstance.setY(230);
+                mapsInstance.aula(stage);
+
+            }
+
+            //Aula
+
+            else if (x >= 770.0 && x <= 800.0 && y >= 0.0 && y <= 800.0 &&
+                    i == 15) {
+                // Hacer algo si las escenas son iguales
+                this.timer.stop();
+                this.root = new Pane();
+
+                mapsInstance.setX(710);
+                mapsInstance.setY(400);
+                mapsInstance.lobbyAulas2(stage);
+
+            }
+
+
             else {
                 //System.out.println("x: " + x + ", y: " + y + ", i: " + this.i);
 

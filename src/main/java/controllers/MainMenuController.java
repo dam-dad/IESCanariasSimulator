@@ -79,7 +79,7 @@ public class MainMenuController {
         musicPlayer.stop();
 //        maps.setX(50);
 //        maps.setY(600);
-        maps.arcade(stage);
+        maps.lobbyInstituto2(stage);
 
     }
 
