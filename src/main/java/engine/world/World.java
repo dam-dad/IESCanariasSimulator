@@ -35,6 +35,10 @@ public class World extends Application {
         Scene scene = new Scene(loader.load());
 
         primaryStage.setScene(scene); // Primero asigna la escena al Stage
+
+        primaryStage.setResizable(false);
+        primaryStage.setFullScreen(false);
+
         primaryStage.show(); // Muestra la ventana
 
         MainMenuController controller = loader.getController();

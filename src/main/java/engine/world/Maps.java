@@ -1,7 +1,6 @@
 package engine.world;
 
 
-import engine.combate.peleitas.FightApplication;
 import engine.combate.peleitas.FightController;
 import engine.minijuego.MinijuegoController;
 import engine.objects.Character;
@@ -15,9 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import javafx.scene.media.MediaPlayer;
 
-import java.io.IOException;
 import java.util.LinkedList;
 
 public class Maps {
@@ -592,6 +589,14 @@ public class Maps {
         //Barra de abajo
         this.createObstacleTile(800, 140, 0, 660.0);
 
+        //Elements
+
+        ImageView cartelImage = new ImageView("puerta.png");
+        Elements element = new Elements(this.root, stage, scene, 4, 204, 145);
+
+        this.elements = element;
+        element.elementsBasics(cartelImage, element.getX(), element.getY(), 60, 148, barrier);
+
         //NPCs
 
         NPC npc = new NPC(this.root, stage, scene, npc_image, 12, 370, 350);
@@ -610,6 +615,8 @@ public class Maps {
         character.setI(9);
         character.addNPC(npc);
         npc.addDialogs(dialog, "Tengo sueño");
+        character.addElements(element);
+        element.addDialogs(dialog, "La secretaría está cerrada.\nVuelva en otro momento a ver si tiene más suerte. \nCampeón.");
 
     }
 
@@ -639,16 +646,22 @@ public class Maps {
         this.createObstacleTile(192, 108, 348, 0);
 
         ImageView cartelImage = new ImageView("cartelmovil.png");
-        Elements element = new Elements(this.root, stage, scene, 3, 450, 30);
+        Elements element = new Elements(this.root, stage, scene, 3, 425, 30);
 
         ImageView cartelImage2 = new ImageView("cartelmovil.png");
         Elements element2 = new Elements(this.root, stage, scene, 3, 650, 630);
+
+        ImageView cartelImage3 = new ImageView("cartelmovil.png");
+        Elements element3 = new Elements(this.root, stage, scene, 3, 110, 30);
 
         this.elements = element;
         element.elementsBasics(cartelImage, element.getX(), element.getY(), 50, 70, barrier);
 
         this.elements = element2;
         element2.elementsBasics(cartelImage2, element2.getX(), element2.getY(), 50, 70, barrier);
+
+        this.elements = element3;
+        element3.elementsBasics(cartelImage3, element3.getX(), element3.getY(), 50, 70, barrier);
 
         //Dialog
 
@@ -661,8 +674,10 @@ public class Maps {
         character.setI(10);
         character.addElements(element);
         character.addElements(element2);
+        character.addElements(element3);
         element.addDialogs(dialog, "QUEDA PROHIBIDO EL USO DE MÓVILES");
         element2.addDialogs(dialog, "QUEDA PROHIBIDO EL USO DE MÓVILES");
+        element3.addDialogs(dialog, "QUEDA PROHIBIDO EL USO DE MÓVILES");
     }
 
     //subidaInstituto
@@ -791,6 +806,16 @@ public class Maps {
         this.createObstacleTile(8, 116, 440, 0);
         //Bancos
         this.createObstacleTile(28, 104, 244, 48);
+        this.createObstacleTile(28, 104, 528, 476);
+        this.createObstacleTile(28, 104, 244, 476);
+
+        //Elements
+
+        ImageView cartelImage = new ImageView("puerta.png");
+        Elements element = new Elements(this.root, stage, scene, 4, 628, 32);
+
+        this.elements = element;
+        element.elementsBasics(cartelImage, element.getX(), element.getY(), 60, 148, barrier);
 
         //Dialog
 
@@ -801,7 +826,8 @@ public class Maps {
         character = new Character(this.root, stage, scene, this.barrier, character_image);
 
         character.setI(13);
-
+        character.addElements(element);
+        element.addDialogs(dialog, "CERRADO. \nPara ir al baño, vete a tu casa o yo que sé XD");
     }
 
     //lobbyAulas2
@@ -863,7 +889,7 @@ public class Maps {
         stage.setScene(scene);
         stage.show();
 
-        ImageView npc_image = new ImageView(new Image("NPCs/FranRight.png"));
+        ImageView npc_image = new ImageView(new Image("NPCs/FranDown.png"));
 
         BackgroundImage = new Image("aula.png");
 

@@ -131,6 +131,18 @@ public class Elements {
                 }
             }
         }
+        //Puerta
+        else if (((x >= this.x - 60 && x <= this.x + 200) && (y >= this.y - 35 && y <= this.y + 148) && id == 4)){
+            for (Dialog dialog : getDialogs()){
+                if (dialog.getDialog().getOpacity() == 0) {
+                    dialog.invokeDialog(frase);
+
+                } else {
+                    dialog.getDialog().setOpacity(0);
+                    dialog.getDialogText().setOpacity(0);
+                }
+            }
+        }
         else {
             System.out.println(this.id + " No se interactua ");
         }

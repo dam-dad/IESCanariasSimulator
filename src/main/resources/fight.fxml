@@ -19,8 +19,8 @@
             <Image url="@parque.jpeg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imagenMonstruo" fitHeight="360.0" fitWidth="259.0" layoutX="527.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imagenJugador" fitHeight="275.0" fitWidth="238.0" layoutX="274.0" layoutY="527.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenMonstruo" fitHeight="292.0" fitWidth="290.0" layoutX="512.0" layoutY="473.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imagenJugador" fitHeight="275.0" fitWidth="238.0" layoutX="252.0" layoutY="527.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Right2_HD.png" />
          </image></ImageView>

@@ -88,7 +88,7 @@ public class MainMenuController {
         musicPlayerMundo.play();
 //        maps.setX(50);
 //        maps.setY(600);
-        maps.lobbyInstituto2(stage);
+        maps.aula(stage);
 
     }
 

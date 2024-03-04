@@ -261,6 +261,8 @@ public class FightController {
                 maps.institutoPlaza(stage);
                 break;
             case 8:
+                maps.setX(130);
+                maps.setY(450);
                 maps.placita(stage);
                 break;
             case 9:
@@ -271,6 +273,18 @@ public class FightController {
                 break;
             case 11:
                 maps.subidaInstituto(stage);
+                break;
+            case 12:
+                maps.subidaInstituto2(stage);
+                break;
+            case 13:
+                maps.lobbyAulas(stage);
+                break;
+            case 14:
+                maps.lobbyAulas2(stage);
+                break;
+            case 15:
+                maps.aula(stage);
                 break;
             default:
                 maps.calleInstituto(stage);

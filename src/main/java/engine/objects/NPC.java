@@ -142,6 +142,7 @@ public class NPC {
             for (Dialog dialog : getDialogs()){
                 if (dialog.getDialog().getOpacity() == 0) {
                     dialog.invokeDialog(frase);
+                    if (id = )
 
                 } else {
                     dialog.getDialog().setOpacity(0);
