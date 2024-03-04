@@ -1,18 +1,11 @@
 package engine.combate.peleitas;
 
-import engine.MusicPlayer;
-import engine.ui.Dialog;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.scene.image.Image;
-import javafx.util.Duration;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-public class Monstruo {
-    private String name;
+public class Fran {
+    private String name = "Fran";
     private int money;
     private Image enemy_image;
     private String[] skill = new String[2];
@@ -26,71 +19,19 @@ public class Monstruo {
 
     private double velocidad;
 
-    private String frase = "Hola";
-    private List<Dialog> dialogs = new ArrayList<>();
-    public void addDialogs(Dialog dialog, String frase) {
-        this.frase = frase; dialogs.add(dialog);
-    }
-    public List<Dialog> getDialogs() {
-        return dialogs;
-    }
-
     //constructor
-    public Monstruo() {
-        this.name = generateRandomMonsterName();
-        initializeStatsBasedOnName();
-    }
-
-    private String generateRandomMonsterName() {
-        String[] possibleNames = {"Monstruo1", "Monstruo2", "Monstruo3"};
-        Random random = new Random();
-        return possibleNames[random.nextInt(possibleNames.length)];
-    }
-
-    private void initializeStatsBasedOnName() {
-        // Asocia las estadísticas según el nombre del monstruo
-        if ("Monstruo1".equals(name)) {
-            this.money = 20;
-            this.enemy_image = new Image("Enemies/Enemy2.png");
-            this.vida = 25;
-            this.vida_maxima = vida;
-            this.ataque = 5;
-            this.defensa = 5;
-            this.ataque_magico = 2;
-            this.defensa_magica = 2;
-            this.skill[0] = "Fire rain";
-            this.skill[1] = "Lava rain";
-            this.velocidad = 15;
-
-        } else if ("Monstruo2".equals(name)) {
-            this.money = 30;
-            this.enemy_image = new Image("Enemies/Enemy3.png");
-            this.vida = 40;
-            this.vida_maxima = vida;
-            this.ataque = 2;
-            this.defensa = 2;
-            this.ataque_magico = 5;
-            this.defensa_magica = 5;
-            this.skill[0] = "Waterfall";
-            this.skill[1] = "Waterstorm";
-            this.velocidad = 15;
-
-        } else if ("Monstruo3".equals(name)) {
-            this.money = 25;
-            this.enemy_image = new Image("Enemies/Enemy1.png");
-            this.vida = 50;
-            this.vida_maxima = vida;
-            this.ataque = 5;
-            this.defensa = 5;
-            this.ataque_magico = 5;
-            this.defensa_magica = 5;
-            this.skill[0] = "Tornado";
-            this.skill[1] = "Mega Tornado";
-            this.velocidad = 25;
-
-        }
-
-
+    public Fran() {
+        this.money = 20;
+        this.enemy_image = new Image("Enemies/Fran.png");
+        this.vida = 50;
+        this.vida_maxima = vida;
+        this.ataque = 5;
+        this.defensa = 5;
+        this.ataque_magico = 2;
+        this.defensa_magica = 2;
+        this.skill[0] = "Fire rain";
+        this.skill[1] = "Lava rain";
+        this.velocidad = 10;
     }
 
     //getters
@@ -172,7 +113,7 @@ public class Monstruo {
         double defensaJugador = jugador.getDefensa();
         double vidaJugador = jugador.getVida();
 
-        int fallo = new java.util.Random().nextInt(99) + 1;
+        int fallo = new Random().nextInt(99) + 1;
         if (fallo > 90) return 0;
 
         double damage = Math.max(0, ataque - defensaJugador) + new Random().nextInt(5);
@@ -192,7 +133,7 @@ public class Monstruo {
 
         double damageExtra = 1.0;
 
-        int fallo = new java.util.Random().nextInt(99) + 1;
+        int fallo = new Random().nextInt(99) + 1;
         if (fallo > 90) return 0;
 
         if (skill == 1) {
@@ -205,14 +146,6 @@ public class Monstruo {
             damage = vidaJugador;
         }
 
-        MusicPlayer efectos;
-        efectos = new MusicPlayer("/Effects/enemyAttack.mp3");
-        efectos.play();
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.75), event -> {
-            efectos.stop();
-        }));
-        timeline.play();
-
         return (int) damage;
     }
 
@@ -221,18 +154,14 @@ public class Monstruo {
     }
 
     public int iaAccion(Jugador jugador) {
-        int ia = new java.util.Random().nextInt(9) + 1;
-        int ia2 = new java.util.Random().nextInt(9) + 1;
+        int ia = new Random().nextInt(9) + 1;
+        int ia2 = new Random().nextInt(9) + 1;
         double damage;
         if (ia < 5) {
-            damage = damageFisico(jugador);
-        }
+            damage = damageFisico(jugador);}
         else if (ia2 < 5){
-            damage = damageSkill(jugador, 1);
-        }
-
-        else {damage = damageSkill(jugador, 2);
-        }
+            damage = damageSkill(jugador, 1);}
+        else {damage = damageSkill(jugador, 2);}
 
         return (int) damage;
     }

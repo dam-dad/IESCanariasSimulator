@@ -1,6 +1,10 @@
 package engine.combate.peleitas;
 
+import engine.MusicPlayer;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.image.Image;
+import javafx.util.Duration;
 
 import java.util.Random;
 
@@ -17,17 +21,17 @@ public class Jugador {
     private double defensa_magica;
     private double velocidad;
 
-    public Jugador(int x){
+    public Jugador(){
         this.money = 0;
         this.jugador_image = null;
         this.skill = new String[]{"Habilidad1", "Habilidad2"};
-        this.vida = 500.0 + x;
-        this.vida_maxima = 500.0 + x;
-        this.ataque = 10.0 + x;
-        this.defensa = 5.0 + x;
-        this.ataque_magico = 8.0 + x;
-        this.defensa_magica = 3.0 + x;
-        this.velocidad = 20 + x;
+        this.vida = 50.0;
+        this.vida_maxima = 50.0;
+        this.ataque = 10.0;
+        this.defensa = 5.0;
+        this.ataque_magico = 8.0;
+        this.defensa_magica = 3.0;
+        this.velocidad = 20;
     }
 
     public int getMoney() {
@@ -152,6 +156,8 @@ public class Jugador {
             }
         }
 
+
+
         double damage = Math.max(0, ataqueMagico * damageExtra - defensaMagicaMonstruo) + new Random().nextInt(5);
         //si la vida restante del monstruo menos el daño hecho por el monstruo es igual o menor a 0, el daño sera igual a la vida restante del Monstruo.
         if (vidaMonstruo - damage <= 0){
@@ -159,6 +165,10 @@ public class Jugador {
         }
 
         return (int) damage;
+    }
+
+    public void quitarVida(){
+        vida = vida-10;
     }
 
     public boolean Muerto() {

@@ -1,5 +1,6 @@
 package engine.combate.peleitas;
 
+import engine.MusicPlayer;
 import engine.world.Maps;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -7,6 +8,8 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
@@ -20,6 +23,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class FightController {
 
@@ -67,68 +71,133 @@ public class FightController {
     private Text jugadorDamage;
 
     private int x;
-    private Jugador jugador = new Jugador(x);
+    private Jugador jugador = new Jugador();
     private Monstruo monstruo = new Monstruo();
+    private Fran fran = new Fran();
     Stage stage;
     Maps maps = new Maps();
     private int I;
+    private int tipoDeCombate;
 
     private boolean prioridadMonstruo;
+
+
 
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
-    @FXML
-    void initialize() {
-        initializeFight();
+    public FightController(int tipoDeCombate){
+        this.tipoDeCombate = tipoDeCombate;
+        System.out.println("Valor de I en el constructor: " + tipoDeCombate);
     }
-
     @FXML
-    private void initializeFight() {
+    private void initialize() {
         System.out.println("Inicializando la pelea...");
+        System.out.println("Valor de I en el constructor: " + tipoDeCombate);
+        if (tipoDeCombate == 1){
+            double progresoJugador = jugador.getVida() / jugador.getVida_maxima();
+            jugadorBarraVida.setProgress(progresoJugador);
+            aplicarColorBarra(jugadorBarraVida, progresoJugador);
+            jugadorVida.setText(String.valueOf(jugador.getVida()));
 
-        double progresoJugador = jugador.getVida() / jugador.getVida_maxima();
-        jugadorBarraVida.setProgress(progresoJugador);
-        aplicarColorBarra(jugadorBarraVida, progresoJugador);
-        jugadorVida.setText(String.valueOf(jugador.getVida()));
+            imagenMonstruo.setImage(monstruo.getEnemy_image());
+            System.out.println("Imagen del monstruo configurada: " + monstruo.getEnemy_image());
+            nombreMonstruo.setText(monstruo.getName());
 
-        imagenMonstruo.setImage(monstruo.getEnemy_image());
-        System.out.println("Imagen del monstruo configurada: " + monstruo.getEnemy_image());
-        nombreMonstruo.setText(monstruo.getName());
+            double progresoMonstruo = monstruo.getVida() / monstruo.getVida_maxima();
+            monstruoBarraVida.setProgress(progresoMonstruo);
+            aplicarColorBarra(monstruoBarraVida, progresoMonstruo);
+            monstruoVida.setText(String.valueOf(monstruo.getVida()));
 
-        double progresoMonstruo = monstruo.getVida() / monstruo.getVida_maxima();
-        monstruoBarraVida.setProgress(progresoMonstruo);
-        aplicarColorBarra(monstruoBarraVida, progresoMonstruo);
-        monstruoVida.setText(String.valueOf(monstruo.getVida()));
+            if (monstruo.getVelocidad() > jugador.getVelocidad()) {
+                prioridadMonstruo = true;
+                botonAtaque.fire();
+            }
+        } else if (tipoDeCombate == 2) {
+                double progresoJugador = jugador.getVida() / jugador.getVida_maxima();
+                jugadorBarraVida.setProgress(progresoJugador);
+                aplicarColorBarra(jugadorBarraVida, progresoJugador);
+                jugadorVida.setText(String.valueOf(jugador.getVida()));
 
-        if (monstruo.getVelocidad() > jugador.getVelocidad()) {
-            prioridadMonstruo = true;
-            botonAtaque.fire();
+                imagenMonstruo.setImage(fran.getEnemy_image());
+                nombreMonstruo.setText(fran.getName());
+
+                double progresoMonstruo = fran.getVida() / fran.getVida_maxima();
+                monstruoBarraVida.setProgress(progresoMonstruo);
+                aplicarColorBarra(monstruoBarraVida, progresoMonstruo);
+                monstruoVida.setText(String.valueOf(fran.getVida()));
+
+                if (fran.getVelocidad() > jugador.getVelocidad()) {
+                    prioridadMonstruo = true;
+                    botonAtaque.fire();
+                }
         }
     }
+
+    public void combateNormal(){
+
+    }
+
 
     @FXML
     void actionButtonEvent(ActionEvent event) throws IOException {
         if (event.getSource().equals(botonAtaque)) {
             accion(jugador.damageFisico(monstruo));
+            MusicPlayer efectos;
+            efectos = new MusicPlayer("/Effects/ataque.mp3");
+            efectos.play();
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.75), event2 -> {
+                efectos.stop();
+            }));
+            timeline.play();
+
         } else if (event.getSource().equals(botonMagia)) {
             accion(jugador.damageSkill(monstruo, 0));
+            MusicPlayer efectos;
+            efectos = new MusicPlayer("/Effects/ataqueCritico.mp3");
+            efectos.play();
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.75), event3 -> {
+                efectos.stop();
+            }));
+            timeline.play();
         } else if (event.getSource().equals(botonFe)) {
             accion(jugador.damageSkill(monstruo, 1));
+            MusicPlayer efectos;
+            efectos = new MusicPlayer("/Effects/ataqueCritico.mp3");
+            efectos.play();
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.75), event4 -> {
+                efectos.stop();
+            }));
+            timeline.play();
         } else if (event.getSource().equals(botonEscapar)) {
-            devolverAMundo();
-            URL url = this.getClass().getClassLoader().getResource("fxml/FinPelea.fxml");
-            if (url == null) return;
-            AnchorPane pane = FXMLLoader.load(url);
-            fightPane.getChildren().setAll(pane);
+            Random random = new Random();
+            double probabilidad = random.nextDouble();
+            if (probabilidad <= 0.5) {
+                MusicPlayer efectos;
+                efectos = new MusicPlayer("/Effects/runAway.mp3");
+                efectos.play();
+                Timeline timeline2 = new Timeline(new KeyFrame(Duration.seconds(1.5), event2 -> {
+                    efectos.stop();
+                }));
+                timeline2.play();
+                devolverAMundo();
+            } else {
+                prioridadMonstruo = true;
+                accion(15);
+                MusicPlayer efectos;
+                efectos = new MusicPlayer("/Effects/notRun.mp3");
+                efectos.play();
+                Timeline timeline2 = new Timeline(new KeyFrame(Duration.seconds(1.5), event2 -> {
+                    efectos.stop();
+                }));
+                timeline2.play();
+            }
+
         }
     }
 
     private KeyFrame[] accionJugador(int damage) {
-        if (jugador.Muerto()) {
-            return new KeyFrame[0];
-        }
         double progresoJugador = jugadorBarraVida.getProgress();
         double progresoMonstruo = monstruoBarraVida.getProgress();
 
@@ -216,8 +285,23 @@ public class FightController {
         timeline.play();
 
         timeline.setOnFinished(e -> {
-            if (jugador.Muerto() || monstruo.Muerto()) {
-                botonEscapar.fire();
+            if (jugador.Muerto()) {
+                try {
+                    jugador.setVida(getJugador().getVida_maxima());
+                    GameOverController gameOver = new GameOverController();
+                    gameOver.gameOverPantalla(stage);
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
+            } else if (monstruo.Muerto()) {
+                MusicPlayer efectos;
+                efectos = new MusicPlayer("/Effects/Win.mp3");
+                efectos.play();
+                Timeline timeline2 = new Timeline(new KeyFrame(Duration.seconds(1.5), event2 -> {
+                    efectos.stop();
+                }));
+                timeline2.play();
+                devolverAMundo();
             }
         });
     }
@@ -290,6 +374,8 @@ public class FightController {
                 maps.calleInstituto(stage);
         }
     }
+
+
 
     public Jugador getJugador() {
         return jugador;

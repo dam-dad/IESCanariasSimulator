@@ -1,12 +1,16 @@
 package engine.objects;
 
 import engine.ui.Dialog;
+import engine.world.Maps;
 import engine.world.ObstacleTile;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -26,6 +30,7 @@ public class NPC {
     private ArrayList<Image> testImageList;
     private int id;
     private String frase = "Hola";
+    Maps maps = new Maps();
 
 
     private List<Dialog> dialogs = new ArrayList<>();
@@ -140,9 +145,19 @@ public class NPC {
 
             System.out.println(this.id + " Se interactua ");
             for (Dialog dialog : getDialogs()){
-                if (dialog.getDialog().getOpacity() == 0) {
+                if (dialog.getDialog().getOpacity() == 0 && id != 11) {
                     dialog.invokeDialog(frase);
-                    //if (id = )
+
+                } else if (id == 11){
+                    dialog.invokeDialog(frase);
+                    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+                        try {
+                            maps.combateFinal(stage);
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                    }));
+                    timeline.play();
 
                 } else {
                     dialog.getDialog().setOpacity(0);

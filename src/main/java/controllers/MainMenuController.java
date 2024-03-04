@@ -1,6 +1,8 @@
 package controllers;
 
 import engine.MusicPlayer;
+import engine.combate.peleitas.GameOverController;
+import exec.Main;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -86,15 +88,49 @@ public class MainMenuController {
     void jugarAction() {
         musicPlayer.stop();
         musicPlayerMundo.play();
-//        maps.setX(50);
-//        maps.setY(600);
-        maps.aula(stage);
+        try {
+            // Cargar la escena del menú de configuración
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Menu/Introduccion.fxml"));
+            Parent root = loader.load();
+
+            // Obtener el controlador del menú de configuración
+            IntroduccionController controller = loader.getController();
+
+            // Pasar el Stage actual al controlador del menú de configuración
+            controller.setStage(stage);
+
+            // Establecer la escena del menú de configuración en el Stage actual
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
     @FXML
     void acercaAction(ActionEvent event) {
-        musicPlayer.stop();
+        try {
+            // Cargar la escena del menú de configuración
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Menu/AcercaMenu.fxml"));
+            Parent root = loader.load();
+
+            // Obtener el controlador del menú de configuración
+            AcercaController controller = loader.getController();
+
+            // Pasar el Stage actual al controlador del menú de configuración
+            controller.setStage(stage);
+
+            // Establecer la escena del menú de configuración en el Stage actual
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     @FXML
@@ -141,6 +177,16 @@ public class MainMenuController {
             // Si el volumen está fuera del rango, puedes lanzar una excepción o simplemente ignorar la llamada
             System.err.println("El volumen debe estar entre 0 y 1");
         }
+    }
+
+    public void mainMenuPantalla(Stage stage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Menu/MainMenu.fxml"));
+        Scene scene = new Scene(loader.load());
+        stage.setScene(scene);
+        stage.show();
+        MainMenuController controller = loader.getController();
+        controller.setStage(stage);
+        controller.setWorld(new Maps());
     }
 
     public MusicPlayer getMusicPlayerMundo() {

@@ -73,15 +73,6 @@ public class Maps {
         character_image.setLayoutX(x);
         character_image.setLayoutY(y);
         this.root.getChildren().add(character_image);
-        ImageView inventory = new ImageView(new Image("inventory.jpg"));
-        inventory.setLayoutX(5.0);
-        inventory.setLayoutY(5.0);
-        this.root.getChildren().add(inventory);
-        ImageView key = new ImageView(new Image("key.png"));
-        key.setLayoutX(10.0);
-        key.setLayoutY(10.0);
-        key.setOpacity(0.2);
-        this.root.getChildren().add(key);
 
         dialog.getDialog().setLayoutX(17);
         dialog.getDialog().setLayoutY(600);
@@ -950,15 +941,29 @@ public class Maps {
 
     }
 
-    public void combate(Stage stage, int i, int sumador) throws Exception {
+    public void combate(Stage stage, int i) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fight.fxml"));
-        FightController fight = new FightController();
+        FightController fight = new FightController(1);
         fight.setI(i);
         fight.setStage(stage);
         loader.setController(fight);
         Parent root = loader.load();
         Scene scene = new Scene(root, 800, 800);
         stage.setTitle("Fight");
+        stage.setScene(scene);
+        stage.show();
+
+        character = new Character(this.root, stage, scene, this.barrier, character_image);
+    }
+
+    public void combateFinal(Stage stage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fight.fxml"));
+        FightController fight = new FightController(2);
+        fight.setStage(stage);
+        loader.setController(fight);
+        Parent root = loader.load();
+        Scene scene = new Scene(root, 800, 800);
+        stage.setTitle("Combate final");
         stage.setScene(scene);
         stage.show();
 

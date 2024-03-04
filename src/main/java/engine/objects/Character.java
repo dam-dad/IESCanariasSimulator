@@ -239,7 +239,7 @@ public class Character {
         mapsInstance.setY(102);
         try {
             sumador += 1;
-            mapsInstance.combate(stage, i, sumador);
+            mapsInstance.combate(stage, i);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

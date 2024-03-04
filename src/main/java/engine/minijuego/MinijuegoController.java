@@ -105,7 +105,7 @@ public class MinijuegoController implements Initializable {
             tiempoRestante--;
             tiempoLabel.setText("Tiempo: " + tiempoRestante + " s");
             if (tiempoRestante <= 0) {
-                finDelJuego();
+                mapsInstance.arcade(stage);
             }
         }));
         temporizadorTimeline.setCycleCount(tiempoRestante); // Establecer la duración del temporizador
@@ -145,11 +145,6 @@ public class MinijuegoController implements Initializable {
         dianasAcertadas++;
 
         eliminarDiana();
-
-        if (this.dianasAcertadas >= 20){
-            musicPlayer.stop();
-            mapsInstance.arcade(stage);
-        }
     }
 
     private void eliminarDiana() {
