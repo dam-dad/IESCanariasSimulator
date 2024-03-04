@@ -35,7 +35,7 @@ public class Monstruo {
         // Asocia las estadísticas según el nombre del monstruo
         if ("Monstruo1".equals(name)) {
             this.money = 20;
-            this.enemy_image = new Image("/spider_border.png");
+            this.enemy_image = new Image("Enemies/Enemy2.png");
             this.vida = 50;
             this.vida_maxima = vida;
             this.ataque = 5;
@@ -51,7 +51,7 @@ public class Monstruo {
 
         } else if ("Monstruo2".equals(name)) {
             this.money = 30;
-            this.enemy_image = new Image("/dog_outline.png");
+            this.enemy_image = new Image("Enemies/Enemy3.png");
             this.vida = 80;
             this.vida_maxima = vida;
             this.ataque = 2;
@@ -64,7 +64,7 @@ public class Monstruo {
 
         } else if ("Monstruo3".equals(name)) {
             this.money = 25;
-            this.enemy_image = new Image("/minotaur-outlined.png");
+            this.enemy_image = new Image("Enemies/Enemy1.png");
             this.vida = 120;
             this.vida_maxima = vida;
             this.ataque = 5;

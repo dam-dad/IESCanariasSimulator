@@ -79,7 +79,6 @@ public class Character {
 
     public Character(){}
     public Character(Pane root, Stage stage, Scene scene, LinkedList<ObstacleTile> barrier, final ImageView character_image)
-
     {
         this.barrier = barrier;
         this.character_image = character_image;
@@ -214,9 +213,9 @@ public class Character {
 
     private void moveCharacter(int dx, int dy) {
 
-        if (shouldStartRandomCombat()) {
-            startRandomCombat();
-        }
+//        if (shouldStartRandomCombat()) {
+//            startRandomCombat();
+//        }
 
         if (dx == 0 && dy == 0 && my == -2) {
             this.character_image.setImage(new Image(this.standingUp));
@@ -622,7 +621,7 @@ public class Character {
                 this.root = new Pane();
 
                 mapsInstance.setX(710);
-                mapsInstance.setY(400);
+                mapsInstance.setY(380);
                 mapsInstance.lobbyAulas2(stage);
 
             }
@@ -630,8 +629,6 @@ public class Character {
 
             else {
                 //System.out.println("x: " + x + ", y: " + y + ", i: " + this.i);
-
-
             }
 
         }

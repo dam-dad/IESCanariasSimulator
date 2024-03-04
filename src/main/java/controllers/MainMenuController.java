@@ -24,7 +24,9 @@ public class MainMenuController {
     private Stage stage;
     private Maps maps = new Maps();
     private MusicPlayer musicPlayer;
+    private MusicPlayer musicPlayerMundo;
     private Stage configuracionStage;
+    private double volume;
 
     private static final String[] CAMINAR_IMAGENES = {"Down1_HD.png", "Down2_HD.png", "Down3_HD.png"};
     private static final int DURACION_FRAME_MILLIS = 200; // Duración de cada frame en milisegundos
@@ -44,6 +46,10 @@ public class MainMenuController {
 
     @FXML
     private Button salirButton;
+
+
+
+
 
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -72,11 +78,14 @@ public class MainMenuController {
 
         musicPlayer = MusicPlayer.getInstance("/Music/menu.mp3");
         musicPlayer.play();
+
+        musicPlayerMundo = new MusicPlayer("/Music/Doom.mp3");
     }
 
     @FXML
     void jugarAction() {
         musicPlayer.stop();
+        musicPlayerMundo.play();
 //        maps.setX(50);
 //        maps.setY(600);
         maps.lobbyInstituto2(stage);
@@ -119,5 +128,22 @@ public class MainMenuController {
 
     public void setWorld(Maps maps) {
         this.maps = maps;
+    }
+    public void setVolume(double volume) {
+        // Valida que el volumen esté dentro del rango permitido (entre 0 y 1)
+        if (volume >= 0 && volume <= 1) {
+            this.volume = volume;
+            // Configurar el volumen del musicPlayer si ya ha sido inicializado
+            musicPlayer.setVolume(volume);
+            musicPlayerMundo.setVolume(volume);
+
+        } else {
+            // Si el volumen está fuera del rango, puedes lanzar una excepción o simplemente ignorar la llamada
+            System.err.println("El volumen debe estar entre 0 y 1");
+        }
+    }
+
+    public MusicPlayer getMusicPlayerMundo() {
+        return musicPlayerMundo;
     }
 }

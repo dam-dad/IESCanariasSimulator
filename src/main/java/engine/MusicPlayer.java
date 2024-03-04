@@ -55,6 +55,17 @@ public class MusicPlayer {
             throw new IllegalArgumentException("El volumen debe estar entre 0 y 1");
         }
     }
-}
 
+    public boolean isPlaying() {
+        return mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING;
+    }
+
+    public static void setInstance(MusicPlayer instance) {
+        MusicPlayer.instance = instance;
+    }
+
+    public static MusicPlayer getInstance() {
+        return instance;
+    }
+}
 

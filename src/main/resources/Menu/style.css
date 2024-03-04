@@ -56,7 +56,7 @@
 }
 
 #jugarButton:hover,
-#configuracionButton:hover,z
+#configuracionButton:hover,
 #acercaButton:hover,
 #salirButton:hover {
     -fx-background-color: linear-gradient(to bottom, #2E8B57, #4CAF50);

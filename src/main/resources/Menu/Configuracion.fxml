@@ -14,7 +14,7 @@
    <children>
       <ImageView fitHeight="800.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../WhatsApp%20Image%202024-03-01%20at%2012.53.30.jpeg" />
+            <Image url="@../FondoMenu.jpeg" />
          </image>
       </ImageView>
       <Label layoutX="215.0" layoutY="47.0" prefHeight="85.0" prefWidth="370.0" text="Configuracion">

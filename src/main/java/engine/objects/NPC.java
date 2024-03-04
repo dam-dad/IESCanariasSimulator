@@ -51,18 +51,67 @@ public class NPC {
         this.id = ID;
 
         if (ID == 1) {
-            standingDown = "Down2.png";
-            standingUp = "Up2.png";
-            standingLeft = "Left2.png";
-            standingRight = "Right2.png";
+            standingDown = "NPCs/random_Down.png";
+            standingUp = "NPCs/random_Up.png";
+            standingLeft = "NPCs/random_Left.png";
+            standingRight = "NPCs/random_Right.png";
 
         } else if (ID == 2) {
-            standingDown = "npcTest_Down2.png";
-            standingUp = "npcTest_Up2.png";
-            standingLeft = "npcTest_Left2.png";
-            standingRight = "npcTest_Right2.png";
+            standingDown = "NPCs/random3_Down.png";
+            standingUp = "NPCs/random3_Up.png";
+            standingLeft = "NPCs/random3_Left.png";
+            standingRight = "NPCs/random3_Right.png";
+        } else if (ID == 3) {
+            standingDown = "NPCs/random4_Down.png";
+            standingUp = "NPCs/random4_Up.png";
+            standingLeft = "NPCs/random4_Left.png";
+            standingRight = "NPCs/random4_Right.png";
+        } else if (ID == 4) {
+            standingDown = "NPCs/monchi_Down.png";
+            standingUp = "NPCs/monchi_Up.png";
+            standingLeft = "NPCs/monchi_Left.png";
+            standingRight = "NPCs/monchi_Right.png";
+        } else if (ID == 5) {
+            standingDown = "NPCs/BrianDown.png";
+            standingUp = "NPCs/BrianUp.png";
+            standingLeft = "NPCs/BrianLeft.png";
+            standingRight = "NPCs/BrianRight.png";
+        } else if (ID == 6) {
+            standingDown = "NPCs/edu_Down.png";
+            standingUp = "NPCs/edu_Up.png";
+            standingLeft = "NPCs/edu_Left.png";
+            standingRight = "NPCs/edu_Right.png";
+        } else if (ID == 7) {
+            standingDown = "NPCs/flavia_Down.png";
+            standingUp = "NPCs/flavia_Up.png";
+            standingLeft = "NPCs/flavia_Left.png";
+            standingRight = "NPCs/flavia_Right.png";
+        } else if (ID == 8) {
+            standingDown = "NPCs/SolajeroDown.png";
+            standingUp = "NPCs/SolajeroUp.png";
+            standingLeft = "NPCs/SolajeroLeft.png";
+            standingRight = "NPCs/SolajeroRight.png";
+        } else if (ID == 9) {
+            standingDown = "NPCs/YormanDown.png";
+            standingUp = "NPCs/YormanUp.png";
+            standingLeft = "NPCs/YormanLeft.png";
+            standingRight = "NPCs/YormanRight.png";
+        } else if (ID == 10) {
+            standingDown = "NPCs/BettyDown.png";
+            standingUp = "NPCs/BettyUp.png";
+            standingLeft = "NPCs/BettyLeft.png";
+            standingRight = "NPCs/BettyRight.png";
+        } else if (ID == 11) {
+            standingDown = "NPCs/FranDown.png";
+            standingUp = "NPCs/FranUp.png";
+            standingLeft = "NPCs/FranLeft.png";
+            standingRight = "NPCs/FranRight.png";
+        } else if (ID == 12) {
+            standingDown = "NPCs/secretaria_Down.png";
+            standingUp = "NPCs/secretaria_Up.png";
+            standingLeft = "NPCs/secretaria_Left.png";
+            standingRight = "NPCs/secretaria_Right.png";
         }
-
 
         NPC.this.NPCReactions();
 

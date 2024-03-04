@@ -52,6 +52,8 @@ public class ConfiguracionMenuController {
             // Pasar el Stage actual al controlador del menú principal
             controller.setStage(stage);
 
+            controller.setVolume(volumeSlider.getValue());
+
             // Establecer la escena del menú principal en el Stage
             Scene scene = new Scene(root);
             stage.setScene(scene);

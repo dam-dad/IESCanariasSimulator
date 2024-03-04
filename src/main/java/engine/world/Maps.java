@@ -101,7 +101,7 @@ public class Maps {
         stage.show();
         ImageView npc_image = new ImageView(new Image("Down2.png")); //Aquí realmente solo marcamos la posición inicial que va a tener el npc en el escenario
         ImageView npc_image2 = new ImageView(new Image("Left2.png"));
-        ImageView npc_image3 = new ImageView(new Image("Right2.png"));
+        ImageView npc_image3 = new ImageView(new Image("NPCs/random4_Right.png"));
 
         ImageView dialogImage = new ImageView(new Image("dialog_box2.png"));
 
@@ -175,7 +175,7 @@ public class Maps {
         stage.setScene(scene);
         stage.show();
 
-        ImageView npc_image = new ImageView(new Image("Down2.png"));
+        ImageView npc_image = new ImageView(new Image("NPCs/edu_Down.png"));
         ImageView npc_image2 = new ImageView(new Image("Down2.png"));
         ImageView npc_image3 = new ImageView(new Image("Down2.png"));
 
@@ -213,7 +213,7 @@ public class Maps {
 
         //NPCs
 
-        NPC npc = new NPC(this.root, stage, scene, npc_image, 1, 100, 250);
+        NPC npc = new NPC(this.root, stage, scene, npc_image, 6, 100, 250);
 
         this.npc = npc;
         npc.NPCBasics(npc_image, npc.getX(), npc.getY(), barrier);
@@ -259,6 +259,7 @@ public class Maps {
         stage.setScene(scene);
         stage.show();
 
+        ImageView npc_image = new ImageView(new Image("NPCs/flavia_Up.png"));
         BackgroundImage = new Image("plaza.png");
 
         Background background = new Background(new BackgroundImage[]{new BackgroundImage(BackgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, size)});
@@ -285,6 +286,12 @@ public class Maps {
             //Banco
         this.createObstacleTile(103.0, 43.0, 188.0, 548.0);
 
+        //NPCs
+
+        NPC npc = new NPC(this.root, stage, scene, npc_image, 7, 330, 540);
+        this.npc = npc;
+        npc.NPCBasics(npc_image, npc.getX(), npc.getY(), barrier);
+
         //Dialog
 
         dialog = new Dialog(root, stage, scene);
@@ -295,6 +302,8 @@ public class Maps {
 
         character.setI(3);
 
+        character.addNPC(npc);
+        npc.addDialogs(dialog, "...");
 
     }
     public void plaza2(Stage stage) {
@@ -304,6 +313,8 @@ public class Maps {
         stage.setTitle("Plaza del Alteza.");
         stage.setScene(scene);
         stage.show();
+        ImageView npc_image = new ImageView(new Image("NPCs/SolajeroRight.png"));
+        ImageView npc_image2 = new ImageView(new Image("NPCs/BrianUp.png"));
 
         BackgroundImage = new Image("plaza2.png");
 
@@ -335,6 +346,16 @@ public class Maps {
         //Banco abajo
         this.createObstacleTile(103.0, 43.0, 244.0, 548.0);
 
+        //NPCs
+
+        NPC npc = new NPC(this.root, stage, scene, npc_image, 8, 40, 310);
+        this.npc = npc;
+        npc.NPCBasics(npc_image, npc.getX(), npc.getY(), barrier);
+
+        NPC npc2 = new NPC(this.root, stage, scene, npc_image2, 5, 370, 530);
+        this.npc = npc2;
+        npc2.NPCBasics(npc_image2, npc2.getX(), npc2.getY(), barrier);
+
         //Dialog
 
         dialog = new Dialog(root, stage, scene);
@@ -344,7 +365,11 @@ public class Maps {
         character = new Character(this.root, stage, scene, this.barrier, character_image);
 
         character.setI(4);
+        character.addNPC(npc);
+        character.addNPC(npc2);
 
+        npc.addDialogs(dialog, "...");
+        npc2.addDialogs(dialog, "...");
     }
 
     public void arcade(Stage stage) {
@@ -400,6 +425,7 @@ public class Maps {
         stage.setTitle("Parada de la 026.");
         stage.setScene(scene);
         stage.show();
+        ImageView npc_image = new ImageView(new Image("NPCs/random3_Left.png"));
 
         BackgroundImage = new Image("paradaGuagua.png");
 
@@ -422,6 +448,12 @@ public class Maps {
         this.elements = element;
         element.elementsBasics(guaguaImage, element.getX(), element.getY(), 50, 180, barrier);
 
+        //NPCs
+
+        NPC npc = new NPC(this.root, stage, scene, npc_image, 2, 630, 150);
+        this.npc = npc;
+        npc.NPCBasics(npc_image, npc.getX(), npc.getY(), barrier);
+
         //Dialog
 
         dialog = new Dialog(root, stage, scene);
@@ -433,6 +465,8 @@ public class Maps {
         character.setI(6);
         character.addElements(element);
         element.addDialogs(dialog, "Parada de la 026");
+        character.addNPC(npc);
+        npc.addDialogs(dialog, "...");
     }
 
     //instituto-plaza
@@ -443,6 +477,7 @@ public class Maps {
         stage.setTitle("Aparcamientos");
         stage.setScene(scene);
         stage.show();
+        ImageView npc_image = new ImageView(new Image("NPCs/random_Right.png"));
 
         BackgroundImage = new Image("instituto-plaza.png");
 
@@ -465,6 +500,12 @@ public class Maps {
         //Casa Derecha
         this.createObstacleTile(240, 112, 560, 688.0);
 
+        //NPCs
+
+        NPC npc = new NPC(this.root, stage, scene, npc_image, 1, 290, 265);
+        this.npc = npc;
+        npc.NPCBasics(npc_image, npc.getX(), npc.getY(), barrier);
+
         //Dialog
 
         dialog = new Dialog(root, stage, scene);
@@ -474,7 +515,8 @@ public class Maps {
         character = new Character(this.root, stage, scene, this.barrier, character_image);
 
         character.setI(7);
-
+        character.addNPC(npc);
+        npc.addDialogs(dialog, "...");
     }
 
     //placita
@@ -485,6 +527,7 @@ public class Maps {
         stage.setTitle("Placita");
         stage.setScene(scene);
         stage.show();
+        ImageView npc_image = new ImageView(new Image("NPCs/monchi_Down.png"));
 
         BackgroundImage = new Image("placita.png");
 
@@ -500,6 +543,12 @@ public class Maps {
         this.createObstacleTile(32.0, 176, 272, 432.0);
         this.createObstacleTile(104, 44, 392, 584.0);
 
+        //NPCs
+
+        NPC npc = new NPC(this.root, stage, scene, npc_image, 4, 425, 640);
+        this.npc = npc;
+        npc.NPCBasics(npc_image, npc.getX(), npc.getY(), barrier);
+
         //Dialog
 
         dialog = new Dialog(root, stage, scene);
@@ -509,6 +558,8 @@ public class Maps {
         character = new Character(this.root, stage, scene, this.barrier, character_image);
 
         character.setI(8);
+        character.addNPC(npc);
+        npc.addDialogs(dialog, "...");
 
     }
 
@@ -520,6 +571,8 @@ public class Maps {
         stage.setTitle("Lobby del IES Canarias");
         stage.setScene(scene);
         stage.show();
+
+        ImageView npc_image = new ImageView(new Image("NPCs/secretaria_Left.png"));
 
         BackgroundImage = new Image("lobby_instituto.png");
 
@@ -539,7 +592,12 @@ public class Maps {
         //Barra de abajo
         this.createObstacleTile(800, 140, 0, 660.0);
 
+        //NPCs
 
+        NPC npc = new NPC(this.root, stage, scene, npc_image, 12, 370, 350);
+
+        this.npc = npc;
+        npc.NPCBasics(npc_image, npc.getX(), npc.getY(), barrier);
 
         //Dialog
 
@@ -550,6 +608,8 @@ public class Maps {
         character = new Character(this.root, stage, scene, this.barrier, character_image);
 
         character.setI(9);
+        character.addNPC(npc);
+        npc.addDialogs(dialog, "Tengo sueño");
 
     }
 
@@ -578,11 +638,17 @@ public class Maps {
         this.createObstacleTile(192, 108, 48, 0);
         this.createObstacleTile(192, 108, 348, 0);
 
-        ImageView guaguaImage = new ImageView("cartelmovil.png");
+        ImageView cartelImage = new ImageView("cartelmovil.png");
         Elements element = new Elements(this.root, stage, scene, 3, 450, 30);
 
+        ImageView cartelImage2 = new ImageView("cartelmovil.png");
+        Elements element2 = new Elements(this.root, stage, scene, 3, 650, 630);
+
         this.elements = element;
-        element.elementsBasics(guaguaImage, element.getX(), element.getY(), 50, 70, barrier);
+        element.elementsBasics(cartelImage, element.getX(), element.getY(), 50, 70, barrier);
+
+        this.elements = element2;
+        element2.elementsBasics(cartelImage2, element2.getX(), element2.getY(), 50, 70, barrier);
 
         //Dialog
 
@@ -594,7 +660,9 @@ public class Maps {
 
         character.setI(10);
         character.addElements(element);
+        character.addElements(element2);
         element.addDialogs(dialog, "QUEDA PROHIBIDO EL USO DE MÓVILES");
+        element2.addDialogs(dialog, "QUEDA PROHIBIDO EL USO DE MÓVILES");
     }
 
     //subidaInstituto
@@ -645,6 +713,7 @@ public class Maps {
         stage.setTitle("Lobby del IES Canarias");
         stage.setScene(scene);
         stage.show();
+        ImageView npc_image = new ImageView(new Image("NPCs/YormanRight.png"));
 
         BackgroundImage = new Image("subida_instituto2.png");
 
@@ -665,6 +734,21 @@ public class Maps {
         this.createObstacleTile(28, 104, 56, 316);
         this.createObstacleTile(28, 104, 56, 672);
 
+        //NPCs
+
+        NPC npc = new NPC(this.root, stage, scene, npc_image, 9, 80, 235);
+        this.npc = npc;
+        npc.NPCBasics(npc_image, npc.getX(), npc.getY(), barrier);
+
+
+        //Elements
+
+        ImageView cartelImage = new ImageView("cartelmovil.png");
+        Elements element = new Elements(this.root, stage, scene, 3, 450, 30);
+
+        this.elements = element;
+        element.elementsBasics(cartelImage, element.getX(), element.getY(), 50, 70, barrier);
+
         //Dialog
 
         dialog = new Dialog(root, stage, scene);
@@ -674,7 +758,10 @@ public class Maps {
         character = new Character(this.root, stage, scene, this.barrier, character_image);
 
         character.setI(12);
-
+        character.addNPC(npc);
+        npc.addDialogs(dialog, "Tengo sueño");
+        character.addElements(element);
+        element.addDialogs(dialog, "QUEDA PROHIBIDO EL USO DE MÓVILES");
     }
 
     //lobbyAulas
@@ -725,6 +812,7 @@ public class Maps {
         stage.setTitle("Aulas");
         stage.setScene(scene);
         stage.show();
+        ImageView npc_image = new ImageView(new Image("NPCs/BettyUp.png"));
 
         BackgroundImage = new Image("lobby_aulas2.png");
 
@@ -747,6 +835,11 @@ public class Maps {
         //Barra de abajo
         this.createObstacleTile(800, 164, 0, 636);
 
+        //NPCs
+
+        NPC npc = new NPC(this.root, stage, scene, npc_image, 10, 375, 370);
+        this.npc = npc;
+        npc.NPCBasics(npc_image, npc.getX(), npc.getY(), barrier);
 
         //Dialog
 
@@ -757,7 +850,8 @@ public class Maps {
         character = new Character(this.root, stage, scene, this.barrier, character_image);
 
         character.setI(14);
-
+        character.addNPC(npc);
+        npc.addDialogs(dialog, "Tengo sueño");
     }
 
     //Aula
@@ -769,7 +863,10 @@ public class Maps {
         stage.setScene(scene);
         stage.show();
 
+        ImageView npc_image = new ImageView(new Image("NPCs/FranRight.png"));
+
         BackgroundImage = new Image("aula.png");
+
 
         Background background = new Background(new BackgroundImage[]{new BackgroundImage(BackgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, size)});
         this.root.setBackground(background);
@@ -786,6 +883,13 @@ public class Maps {
         //Muro Fondo
         this.createObstacleTile(800, 220, 0, 0);
 
+        //NPCs
+
+        NPC npc = new NPC(this.root, stage, scene, npc_image, 11, 185, 235);
+
+        this.npc = npc;
+        npc.NPCBasics(npc_image, npc.getX(), npc.getY(), barrier);
+
         //Dialog
 
         dialog = new Dialog(root, stage, scene);
@@ -795,7 +899,8 @@ public class Maps {
         character = new Character(this.root, stage, scene, this.barrier, character_image);
 
         character.setI(15);
-
+        character.addNPC(npc);
+        npc.addDialogs(dialog, "Tengo sueño");
     }
 
     public void minijuego(Stage stage) throws Exception {
