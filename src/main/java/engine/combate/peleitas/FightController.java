@@ -137,12 +137,10 @@ public class FightController {
                 }
 
         }
-        generarReporteMonstruo();
+
     }
 
-    private void generarReporteMonstruo() {
-        GenerateMonstruoReport.generateReport(monstruo);
-    }
+
 
     public void combateNormal(){
 

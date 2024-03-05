@@ -10,12 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55b84a9d-f83e-4c96-8cb2-7eedd279b055" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/IESCanariasSimulator_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/IESCanariasSimulator_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/IntroduccionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/IntroduccionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/objects/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/objects/NPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/world/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/world/Maps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/IESCanariasSimulator_jar/IESCanariasSimulator.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/FightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/FightController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/GenerateMonstruoReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/minijuego/MinijuegoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/minijuego/MinijuegoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/reports/Monstruo.jrxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +76,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.4275862",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
