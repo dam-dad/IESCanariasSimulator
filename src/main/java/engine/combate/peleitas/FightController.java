@@ -135,7 +135,7 @@ public class FightController {
                     prioridadMonstruo = true;
                     botonAtaque.fire();
                 }
-                
+
         }
         generarReporteMonstruo();
     }

@@ -10,35 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55b84a9d-f83e-4c96-8cb2-7eedd279b055" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/FinalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/PostFinalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/GenerateMonstruoReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FinalFight.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Menu/Final.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Menu/PostFinal.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/reports/Diana.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/reports/Monstruo.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ConfiguracionMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ConfiguracionMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/IntroduccionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/IntroduccionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/MainMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/FightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/FightController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/Fran.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/Fran.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/GameOverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/GameOverController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/Monstruo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/Monstruo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/combate/peleitas/SumadorCombate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/minijuego/MinijuegoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/minijuego/MinijuegoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/objects/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/objects/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engine/objects/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/objects/NPC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/engine/world/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engine/world/Maps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GameOver.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GameOver.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Menu/AcercaMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Menu/AcercaMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Menu/Configuracion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Menu/Configuracion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Menu/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Menu/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PantallaInicio.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PantallaInicio.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fight.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fight.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +71,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.4275862",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",

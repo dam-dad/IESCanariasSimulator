@@ -148,9 +148,6 @@ public class Maps {
         stage.show();
 
         ImageView npc_image = new ImageView(new Image("NPCs/edu_Down.png"));
-        ImageView npc_image2 = new ImageView(new Image("Down2.png"));
-        ImageView npc_image3 = new ImageView(new Image("Down2.png"));
-
 
         BackgroundImage = new Image("calleinstituto2.png");
 
@@ -190,16 +187,6 @@ public class Maps {
         this.npc = npc;
         npc.NPCBasics(npc_image, npc.getX(), npc.getY(), barrier);
 
-        NPC npc2 = new NPC(this.root, stage, scene, npc_image2, 2, 400, 650);
-
-        this.npc = npc2;
-        npc2.NPCBasics(npc_image2, npc2.getX(), npc2.getY(), barrier);
-
-        NPC npc3 = new NPC(this.root, stage, scene, npc_image3, 1, 50, 150);
-
-        this.npc = npc3;
-        npc3.NPCBasics(npc_image3, npc3.getX(), npc3.getY(), barrier);
-
         //Dialog
 
         dialog = new Dialog(root, stage, scene);
@@ -210,12 +197,8 @@ public class Maps {
 
         character.setI(2);
         character.addNPC(npc);
-        character.addNPC(npc2);
-        character.addNPC(npc3);
 
         npc.addDialogs(dialog, "¿Cuál es la forma orientada a objetos para volverse rico? \nHerencia");
-        npc2.addDialogs(dialog, "Tuviste piedad, gracias :D");
-        npc3.addDialogs(dialog, "4 días para conseguir que los diálogos funcionen :')");
 
         System.out.println(character.getNPCs());
 
