@@ -23,12 +23,12 @@ public class Fran {
     public Fran() {
         this.money = 20;
         this.enemy_image = new Image("Enemies/Fran.png");
-        this.vida = 50;
+        this.vida = 60;
         this.vida_maxima = vida;
-        this.ataque = 5;
-        this.defensa = 5;
-        this.ataque_magico = 2;
-        this.defensa_magica = 2;
+        this.ataque = 7;
+        this.defensa = 10;
+        this.ataque_magico = 5;
+        this.defensa_magica = 10;
         this.skill[0] = "Fire rain";
         this.skill[1] = "Lava rain";
         this.velocidad = 10;

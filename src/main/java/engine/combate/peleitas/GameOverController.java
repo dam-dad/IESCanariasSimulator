@@ -1,6 +1,7 @@
 package engine.combate.peleitas;
 import controllers.MainMenuController;
 import engine.world.Maps;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,16 +19,14 @@ public class GameOverController {
     }
     @FXML
     void reintentarAction(ActionEvent event) {
+        maps.setY(65);
+        maps.setX(550);
         maps.paradaGuagua(stage);
     }
 
     @FXML
     void volverAction(ActionEvent event) {
-        try {
-            mainMenu.mainMenuPantalla(stage);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        Platform.exit();
     }
 
     public void gameOverPantalla(Stage stage) throws Exception {

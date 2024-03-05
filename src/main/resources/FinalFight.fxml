@@ -15,7 +15,7 @@
    <children>
       <ImageView fitHeight="800.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@parque.jpeg" />
+            <Image url="@FinalFightFondo.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="imagenMonstruo" fitHeight="292.0" fitWidth="290.0" layoutX="512.0" layoutY="473.0" pickOnBounds="true" preserveRatio="true" />

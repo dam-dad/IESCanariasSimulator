@@ -78,7 +78,7 @@ public class MainMenuController {
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
 
-        musicPlayer = MusicPlayer.getInstance("/Music/menu.mp3");
+        musicPlayer = MusicPlayer.getInstance("/Music/MenuMusic.mp3");
         musicPlayer.play();
 
         musicPlayerMundo = new MusicPlayer("/Music/Doom.mp3");

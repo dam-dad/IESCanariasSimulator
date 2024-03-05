@@ -152,7 +152,7 @@ public class NPC {
                     dialog.invokeDialog(frase);
                     Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
                         try {
-                            maps.combateFinal(stage);
+                            maps.combateFinal(stage, 15);
                         } catch (Exception e) {
                             throw new RuntimeException(e);
                         }

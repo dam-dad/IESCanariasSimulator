@@ -18,7 +18,7 @@
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button id="volverMenuButton" layoutX="300.0" layoutY="660.0" mnemonicParsing="false" onAction="#volverAction" prefHeight="62.0" prefWidth="200.0" text="Volver al menu">
+      <Button id="volverMenuButton" layoutX="300.0" layoutY="660.0" mnemonicParsing="false" onAction="#volverAction" prefHeight="62.0" prefWidth="200.0" text="Salir">
          <font>
             <Font size="18.0" />
          </font></Button>

@@ -25,7 +25,7 @@ public class ConfiguracionMenuController {
     }
 
     public void initialize() {
-        musicPlayer = MusicPlayer.getInstance("/Music/Our_Enemy.mp3"); // Obtener la instancia única
+        musicPlayer = MusicPlayer.getInstance("/Music/MainMenu.mp3"); // Obtener la instancia única
         musicPlayer.play();
         volumeSlider.setValue(musicPlayer.getVolume() * 100);
         volumeSlider.valueProperty().addListener(new InvalidationListener() {

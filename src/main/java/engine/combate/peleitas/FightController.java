@@ -1,5 +1,7 @@
 package engine.combate.peleitas;
 
+import controllers.FinalController;
+import controllers.MainMenuController;
 import engine.MusicPlayer;
 import engine.world.Maps;
 import javafx.animation.KeyFrame;
@@ -20,6 +22,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -81,7 +84,7 @@ public class FightController {
 
     private boolean prioridadMonstruo;
 
-
+    private boolean combateFran;
 
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -132,7 +135,13 @@ public class FightController {
                     prioridadMonstruo = true;
                     botonAtaque.fire();
                 }
+                
         }
+        generarReporteMonstruo();
+    }
+
+    private void generarReporteMonstruo() {
+        GenerateMonstruoReport.generateReport(monstruo);
     }
 
     public void combateNormal(){
@@ -297,7 +306,7 @@ public class FightController {
                 MusicPlayer efectos;
                 efectos = new MusicPlayer("/Effects/Win.mp3");
                 efectos.play();
-                Timeline timeline2 = new Timeline(new KeyFrame(Duration.seconds(1.5), event2 -> {
+                Timeline timeline2 = new Timeline(new KeyFrame(Duration.seconds(1), event2 -> {
                     efectos.stop();
                 }));
                 timeline2.play();
@@ -319,8 +328,6 @@ public class FightController {
     private void devolverAMundo(){
         switch (I) {
             case 1:
-                maps.setX(50);
-                maps.setY(300);
                 maps.calleInstituto(stage);
                 break;
             case 2:
@@ -339,7 +346,6 @@ public class FightController {
                 maps.setX(50);
                 maps.setY(600);
                 maps.paradaGuagua(stage);
-
                 break;
             case 7:
                 maps.institutoPlaza(stage);
@@ -368,7 +374,16 @@ public class FightController {
                 maps.lobbyAulas2(stage);
                 break;
             case 15:
-                maps.aula(stage);
+                System.out.println(combateFran);
+                if (combateFran == true){
+                    try {
+                        mainMenuPantalla(stage);
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                } else {
+                    maps.aula(stage);
+                }
                 break;
             default:
                 maps.calleInstituto(stage);
@@ -376,6 +391,15 @@ public class FightController {
     }
 
 
+    public void mainMenuPantalla(Stage stage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Menu/Final.fxml"));
+        Scene scene = new Scene(loader.load());
+        stage.setScene(scene);
+        stage.show();
+        FinalController controller = loader.getController();
+        controller.setStage(stage);
+        controller.setWorld(new Maps());
+    }
 
     public Jugador getJugador() {
         return jugador;
@@ -387,5 +411,9 @@ public class FightController {
 
     public void setI(int i) {
         I = i;
+    }
+
+    public void setCombateFran(boolean combateFran) {
+        this.combateFran = combateFran;
     }
 }

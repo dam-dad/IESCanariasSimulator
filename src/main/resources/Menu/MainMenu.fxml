@@ -28,6 +28,6 @@
       <Button id="configuracionButton" fx:id="configuracionButton" layoutX="62.0" layoutY="448.0" mnemonicParsing="false" onAction="#configuracionAction" prefHeight="74.0" prefWidth="217.0" text="Configuracion" />
       <Button id="acercaButton" fx:id="acercaButton" layoutX="62.0" layoutY="528.0" mnemonicParsing="false" onAction="#acercaAction" prefHeight="74.0" prefWidth="217.0" text="Acerca de" />
       <Button id="salirButton" fx:id="salirButton" layoutX="62.0" layoutY="609.0" mnemonicParsing="false" onAction="#salirAction" prefHeight="74.0" prefWidth="217.0" text="Salir" />
-      <ImageView fx:id="animacionIV" fitHeight="423.0" fitWidth="359.0" layoutX="382.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="animacionIV" fitHeight="423.0" fitWidth="359.0" layoutX="379.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

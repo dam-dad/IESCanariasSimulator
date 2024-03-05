@@ -18,11 +18,11 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import engine.objects.Character;
 import javafx.util.Pair;
+import net.sf.jasperreports.engine.*;
 
+import java.io.InputStream;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class MinijuegoController implements Initializable {
 
@@ -86,8 +86,6 @@ public class MinijuegoController implements Initializable {
         puntosLabel.setText("Puntos: " + puntuacion.getPuntos());
         tiempoLabel.setText("Tiempo: " + tiempoRestante + " s"); // Mostrar tiempo inicial
         manoDoom.setImage(doomGun);
-        musicPlayer = new MusicPlayer("/Music/Doom.mp3");
-        musicPlayer.play();
         iniciarMinijuego();
         cambiarFondo();
 
@@ -106,12 +104,17 @@ public class MinijuegoController implements Initializable {
             tiempoLabel.setText("Tiempo: " + tiempoRestante + " s");
             if (tiempoRestante <= 0) {
                 mapsInstance.arcade(stage);
+                int dianasAcertadas = obtenerCantidadDianasAcertadas();
+                generarInforme(puntuacion.getPuntos(), dianasAcertadas);
             }
         }));
         temporizadorTimeline.setCycleCount(tiempoRestante); // Establecer la duración del temporizador
         temporizadorTimeline.play();
     }
 
+    private int obtenerCantidadDianasAcertadas() {
+        return dianasAcertadas;
+    }
 
     private void finDelJuego() {
         musicPlayer.stop();
@@ -166,6 +169,35 @@ public class MinijuegoController implements Initializable {
 
     }
 
+    public static void generarInforme(int puntuacion, int dianasAcertadas) {
+        try {
+            // Cargar el diseño del informe desde un archivo .jrxml
+            InputStream jrxmlInputStream = MinijuegoController.class.getClassLoader().getResourceAsStream("reports/Diana.jrxml");
+
+            // Compilar el diseño del informe a un objeto JasperReport
+            JasperReport jasperReport = JasperCompileManager.compileReport(jrxmlInputStream);
+
+            // Recopilar los datos necesarios para el informe
+            Map<String, Object> parameters = new HashMap<>();
+            Date fechaGeneracion = new Date();
+            parameters.put("puntuacion", puntuacion);
+            parameters.put("dianasAcertadas", dianasAcertadas);
+            parameters.put("fecha_generacion", fechaGeneracion);
+
+            // Llenar y generar el informe con parámetros y utilizando un JREmptyDataSource para evitar ambigüedades
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
+
+            // Definir la ruta del archivo PDF en el escritorio
+            String userHome = System.getProperty("user.home");
+            String pathToFile = userHome + "/Desktop/puntuacion.pdf";
+
+            // Exportar el informe a un archivo PDF
+            JasperExportManager.exportReportToPdfFile(jasperPrint, pathToFile);
+
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     private StackPane obtenerStackPaneDianaActual() {

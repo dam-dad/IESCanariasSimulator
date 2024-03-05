@@ -87,8 +87,6 @@ public class Maps {
         stage.setTitle("Calle del instituto.");
         stage.setScene(scene);
         stage.show();
-        ImageView npc_image = new ImageView(new Image("Down2.png")); //Aquí realmente solo marcamos la posición inicial que va a tener el npc en el escenario
-        ImageView npc_image2 = new ImageView(new Image("Left2.png"));
         ImageView npc_image3 = new ImageView(new Image("NPCs/random4_Right.png"));
 
         ImageView dialogImage = new ImageView(new Image("dialog_box2.png"));
@@ -116,16 +114,6 @@ public class Maps {
 
         //NPCs
 
-        NPC npc = new NPC(this.root, stage, scene, npc_image, 1, 370, 350);
-
-        this.npc = npc;
-        npc.NPCBasics(npc_image, npc.getX(), npc.getY(), barrier);
-
-        NPC npc2 = new NPC(this.root, stage, scene, npc_image2, 2, 550, 150);
-
-        this.npc = npc2;
-        npc2.NPCBasics(npc_image2, npc2.getX(), npc2.getY(), barrier);
-
         NPC npc3 = new NPC(this.root, stage, scene, npc_image3, 3, 300, 550);
 
         this.npc = npc3;
@@ -140,12 +128,8 @@ public class Maps {
         character = new Character(this.root, stage, scene, this.barrier, character_image);
 
         character.setI(1);
-        character.addNPC(npc);
-        character.addNPC(npc2);
         character.addNPC(npc3);
 
-        npc.addDialogs(dialog, "Tengo sueño");
-        npc2.addDialogs(dialog, "Hola que tal");
         npc3.addDialogs(dialog, "Me cago en Java");
 
 
@@ -387,7 +371,7 @@ public class Maps {
         this.createObstacleTile(352.0, 36.0, 448.0, 764.0);
 
         ImageView arcadeImage = new ImageView("arcadeMachine.png");
-        Elements element = new Elements(this.root, stage, scene, 1, 250, 380);
+        Elements element = new Elements(this.root, stage, scene, 1, 545, 340);
 
         this.elements = element;
         element.elementsBasics(arcadeImage, element.getX(), element.getY(), 60, 87, barrier);
@@ -956,10 +940,12 @@ public class Maps {
         character = new Character(this.root, stage, scene, this.barrier, character_image);
     }
 
-    public void combateFinal(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fight.fxml"));
+    public void combateFinal(Stage stage, int i) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FinalFight.fxml"));
         FightController fight = new FightController(2);
         fight.setStage(stage);
+        fight.setCombateFran(true);
+        fight.setI(i);
         loader.setController(fight);
         Parent root = loader.load();
         Scene scene = new Scene(root, 800, 800);
