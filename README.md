@@ -6,7 +6,7 @@ IESCanariasSimulator es un videojuego hecho en javafx, cuenta con diferentes esc
 
 ## Manual de uso
 ### Menu
-![Menu inicial](https://github.com/dam-dad/IESCanariasSimulator/capturas/menu.png)
+![Menu inicial](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/menu.PNG)
 En el menu de inicio contaremos con 4 opciones diferentes
 - Jugar
 - Configuracion
@@ -15,32 +15,32 @@ En el menu de inicio contaremos con 4 opciones diferentes
 
 #### Jugar
 Al seleccionar esta opcion se abrira una pantalla que contendra una pequeña introduccion de la historia del juego.
-![Introduccion](https://github.com/dam-dad/IESCanariasSimulator/capturas/jugar.png)
+![Introduccion](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/jugar.PNG)
 
 Si seleccionamos el boton que pone "¡Por supuesto!" accederemos al instituto.
 
 #### Configuracion
 Al seleccionar esta opcion abriremos el menu de configuracion donde podremos elegir el volumen de la musica del juego.
-![Configuracion](https://github.com/dam-dad/IESCanariasSimulator/capturas/confi.png)
+![Configuracion](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/confi.PNG)
 
 #### Acerca de
 Al seleccionar esta opcion se abrira una pantalla con los creditos del juego.
-![Creditos](https://github.com/dam-dad/IESCanariasSimulator/capturas/Creditos.png)
+![Creditos](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/Creditos.PNG)
 
 #### Salir
 Al seleccionar esta opcion se cerrara la aplicacion.
 
 ### Escenario
 Una vez hayamos iniciado el juego empezaremos en el instituto, podremos recorrerlo, asi como los diferentes escenarios.
-![Instituto](https://github.com/dam-dad/IESCanariasSimulator/capturas/instituto.png)
+![Instituto](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/instituto.PNG)
 
 Dentro del mundo del juego hay diferentes npcs y elementos con los que se pueden interactuar
-![Npcs](https://github.com/dam-dad/IESCanariasSimulator/capturas/npc.png)
-![Elementos del escenario](https://github.com/dam-dad/IESCanariasSimulator/capturas/interactuarElementos.png)
+![Npcs](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/npc.PNG)
+![Elementos del escenario](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/interactuarElementos.PNG)
 
 ### Combate
 Mientras caminas por el mundo empezaran combates aleatorios
-![Elementos del escenario](https://github.com/dam-dad/IESCanariasSimulator/capturas/combate.png)
+![Elementos del escenario](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/combate.PNG)
 
 La interfaz del combate cuenta con los siguientes elementos
 
@@ -56,14 +56,14 @@ La interfaz del combate cuenta con los siguientes elementos
 
 #### Game Over
 Si la vida del jugador baja a 0 accedera a la pantalla de Game Over.
-![Game Over](https://github.com/dam-dad/IESCanariasSimulator/capturas/gameOver.png)
+![Game Over](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/gameOver.PNG)
 - Boton de reintentar: el jugador volvera a empezar el juego desde el principio
 - Boton de salir: para salir de la aplicacion.
 
 
 ### Minijuego
 El jugador podra jugar a un minijuego de punteria, con el objetivo de conseguir la puntuacion mas alta posible, la interfaz del minijuego cuenta con los siguientes elementos:
-![Minijuego](https://github.com/dam-dad/IESCanariasSimulator/capturas/minijuego.png)
+![Minijuego](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/minijuego.PNG)
 - Texto tiempo: indica el tiempo restante para que termine el minijuego.
 - Texto Puntos: indica la puntuacion actual del jugador en el minijuego.
 - Arma: representacion del jugador.
@@ -71,37 +71,37 @@ El jugador podra jugar a un minijuego de punteria, con el objetivo de conseguir 
 
 #### Acceder al minijuego
 Para acceder al minijuego primero hay que llegar al parque en la parte izquierda del mapa.
-![Acceder al minijuego parte 1](https://github.com/dam-dad/IESCanariasSimulator/capturas/accederMinijuego1.png)
+![Acceder al minijuego parte 1](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/accederMinijuego1.PNG)
 Una vez en el parque el jugador debera entrar por la puerta a la sala de arcade, aqui tiene que interactuar con la maquina de arcade para empezar el minijuego.
-![Acceder al minijuego parte 2](https://github.com/dam-dad/IESCanariasSimulator/capturas/accederMinijuego2.png)
+![Acceder al minijuego parte 2](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/accederMinijuego2.PNG)
 
 ### Final Boss
 Batalla final contra el profesor Fran
 
 #### Acceder al boss
 Para acceder al boss final el jugador tendra que dirigirnos al instituto y subir al aula de 2ºDAM, aqui debera interactuar con el profesor para iniciar la batalla final.
-![Habla con Fran](https://github.com/dam-dad/IESCanariasSimulator/capturas/accederBossFran.png)
+![Habla con Fran](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/accederBossFran.PNG)
 
 #### Victoria
 Si derrotas a Fran aprobaras el curso y podras volver al menu principal.
 A no ser...
 
 ## Jugador
-![Jugador](https://github.com/dam-dad/IESCanariasSimulator/capturas/Right2_HD.png)
+![Jugador](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/Right2_HD.png)
 
 ## Enemigos
-![Enemigo 1](https://mi-repositorio.github.io/imagenes/logo.png)
-![Enemigo 2](https://mi-repositorio.github.io/imagenes/logo.png)
-![Enemigo 3](https://mi-repositorio.github.io/imagenes/logo.png)
-![Fran](https://mi-repositorio.github.io/imagenes/logo.png)
+![Enemigo 1](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/Enemy1.png)
+![Enemigo 2](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/Enemy2.png)
+![Enemigo 3](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/Enemy3.png)
+![Fran](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/Fran.png)
 
 ## Controles
 ### Menu
-![Raton](https://mi-repositorio.github.io/imagenes/logo.png)
+![Raton](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/raton.png)
 
 ### Escenario
-![movimiento](https://mi-repositorio.github.io/imagenes/logo.png)
-![interactuar](https://mi-repositorio.github.io/imagenes/logo.png)
+![movimiento](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/directional.png)
+![movimiento](https://raw.githubusercontent.com/dam-dad/IESCanariasSimulator/main/capturas/wasd.png)
 
 ## Ideas descartadas
 Aqui presentaremos algunas ideas que descartamos por falta de tiempo:

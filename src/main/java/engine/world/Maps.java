@@ -130,7 +130,7 @@ public class Maps {
         character.setI(1);
         character.addNPC(npc3);
 
-        npc3.addDialogs(dialog, "Me cago en Java");
+        npc3.addDialogs(dialog, "¡Que guarra es la gente! Ya una no puede ni pisar la acera \ntranquila");
 
 
         System.out.println(character.getNPCs()); //DEBUG
@@ -198,7 +198,7 @@ public class Maps {
         character.setI(2);
         character.addNPC(npc);
 
-        npc.addDialogs(dialog, "¿Cuál es la forma orientada a objetos para volverse rico? \nHerencia");
+        npc.addDialogs(dialog, "Eduardo: El maldito Unbuntu no me va...");
 
         System.out.println(character.getNPCs());
 
@@ -258,7 +258,7 @@ public class Maps {
         character.setI(3);
 
         character.addNPC(npc);
-        npc.addDialogs(dialog, "...");
+        npc.addDialogs(dialog, "Flavia: Me quedé sola en empresas...");
 
     }
     public void plaza2(Stage stage) {
@@ -324,7 +324,7 @@ public class Maps {
         character.addNPC(npc2);
 
         npc.addDialogs(dialog, "...");
-        npc2.addDialogs(dialog, "...");
+        npc2.addDialogs(dialog, "Brian:¿Por qué los mariscos no vienen de Francia?\nPorque si no serían Franciscos.\nTatakae");
     }
 
     public void arcade(Stage stage) {
@@ -419,9 +419,9 @@ public class Maps {
 
         character.setI(6);
         character.addElements(element);
-        element.addDialogs(dialog, "Parada de la 026");
+        element.addDialogs(dialog, "Parada de la 026. Siguiente guagua: ---");
         character.addNPC(npc);
-        npc.addDialogs(dialog, "...");
+        npc.addDialogs(dialog, "Bombardeen Titsa");
     }
 
     //instituto-plaza
@@ -471,7 +471,7 @@ public class Maps {
 
         character.setI(7);
         character.addNPC(npc);
-        npc.addDialogs(dialog, "...");
+        npc.addDialogs(dialog, "El Power Coco subió de precio otra vez...");
     }
 
     //placita
@@ -514,7 +514,7 @@ public class Maps {
 
         character.setI(8);
         character.addNPC(npc);
-        npc.addDialogs(dialog, "...");
+        npc.addDialogs(dialog, "Monchi: ¿Tú crees que si voy al examen final de \nBetty me aprueba?");
 
     }
 
@@ -572,7 +572,7 @@ public class Maps {
 
         character.setI(9);
         character.addNPC(npc);
-        npc.addDialogs(dialog, "Tengo sueño");
+        npc.addDialogs(dialog, "Si sales no vuelves a entrar.");
         character.addElements(element);
         element.addDialogs(dialog, "La secretaría está cerrada.\nVuelva en otro momento a ver si tiene más suerte. \nCampeón.");
 
@@ -732,7 +732,7 @@ public class Maps {
 
         character.setI(12);
         character.addNPC(npc);
-        npc.addDialogs(dialog, "Tengo sueño");
+        npc.addDialogs(dialog, "Yorman: Este código es una mierda.");
         character.addElements(element);
         element.addDialogs(dialog, "QUEDA PROHIBIDO EL USO DE MÓVILES");
     }
@@ -835,7 +835,7 @@ public class Maps {
 
         character.setI(14);
         character.addNPC(npc);
-        npc.addDialogs(dialog, "Tengo sueño");
+        npc.addDialogs(dialog, "Betty: Creo que deberías dedicarle el tiempo de mi \nasignatura a otra que creas que puedas aprobar");
     }
 
     //Aula
@@ -884,7 +884,7 @@ public class Maps {
 
         character.setI(15);
         character.addNPC(npc);
-        npc.addDialogs(dialog, "Tengo sueño");
+        npc.addDialogs(dialog, "Fran: Chuck Norris hace los exámenes de DAD en bloc \nde notas. A ti te toca a papel.");
     }
 
     public void minijuego(Stage stage) throws Exception {

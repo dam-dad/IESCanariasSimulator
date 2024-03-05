@@ -81,7 +81,7 @@ public class MainMenuController {
         musicPlayer = MusicPlayer.getInstance("/Music/MenuMusic.mp3");
         musicPlayer.play();
 
-        musicPlayerMundo = new MusicPlayer("/Music/Doom.mp3");
+        musicPlayerMundo = new MusicPlayer("/Music/MainMusic.mp3");
     }
 
     @FXML

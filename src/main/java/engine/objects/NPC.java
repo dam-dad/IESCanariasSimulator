@@ -150,7 +150,7 @@ public class NPC {
 
                 } else if (id == 11){
                     dialog.invokeDialog(frase);
-                    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+                    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(2), event -> {
                         try {
                             maps.combateFinal(stage, 15);
                         } catch (Exception e) {

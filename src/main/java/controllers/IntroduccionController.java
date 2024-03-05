@@ -15,8 +15,8 @@ public class IntroduccionController {
     }
     @FXML
     void jugarAction(ActionEvent event) {
-        maps.setY(65);
-        maps.setX(550);
-        maps.paradaGuagua(stage);
+//        maps.setY(65);
+//        maps.setX(550);
+        maps.aula(stage);
     }
 }
